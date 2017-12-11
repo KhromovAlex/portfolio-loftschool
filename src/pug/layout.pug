@@ -9,6 +9,9 @@ html(lang="ru-RU")
         meta(name="description" content="Описание сайта")
         title #{title}
         link(rel="stylesheet" href="css/main.min.css")
-        script(src='js/main.js' defer)
     body
-        block content
+        div(class="content-" + page).wrapper
+            include section/header
+            block content
+            include ../../build/img/sprite.svg
+        include section/footer

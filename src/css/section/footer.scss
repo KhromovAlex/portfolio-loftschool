@@ -1,0 +1,45 @@
+.footer{
+  background-color: rgba($black,0.851);
+  height: 150px;
+  position: relative;
+}
+
+.footer__top{
+  height: 50%;
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+}
+
+.footer__nav{
+  margin-left: 30px;
+}
+
+.footer__social{
+  margin-left:auto;
+  margin-right: 30px;
+}
+
+.footer__bottom{
+  height: 50%;
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  border-top:1px solid rgba(#fff,.1);
+}
+
+.footer__about{
+  margin-left: 30px;
+}
+
+.footer__about-text{
+  color: rgba(#fff,0.5);
+}
+
+.footer__copyright{
+  margin-left:auto;
+  margin-right: 30px;
+  .copyright__text{
+    color: rgba(#fff,0.5);
+  }
+}
