@@ -4,3 +4,35 @@ block vars
     - var title = "Главная страница";
 
 block content
+    .welcome-page
+        header.header_welcome
+            a.link-login(href="#") Авторизоваться
+        .welcome-content
+            include ../section/profile
+            .social.social_welcome
+                ul.social__list
+                    li.social__item
+                        a.social__link(href="https://vk.com/sashko_khr" target="_blank")
+                            svg.social__svg_welcome
+                                use(xlink:href="#icon-vk")
+
+                    li.social__item
+                        a.social__link(href="https://github.com/KhromovAlex" target="_blank")
+                            svg.social__svg_welcome
+                                use(xlink:href="#icon-github")
+                    li.social__item
+                        a.social__link(href="#")
+                            svg.social__svg_welcome
+                                use(xlink:href="#icon-in")
+            .nav
+                ul.nav__list
+                    li.nav__item
+                        a.nav__link(href="works.html") Мои работы
+                    li.nav__item
+                        a.nav__link(href="about.html") Обо мне
+                    li.nav__item
+                        a.nav__link(href="blog.html") Блог
+        footer.footer_welcome
+            .copyright
+                span.copyright__text.
+                    © Александр Хромов | создано с любовью в LoftSchool | 2017
