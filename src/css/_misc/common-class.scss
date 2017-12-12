@@ -1,9 +1,16 @@
+body{
+  *{
+    @include roboto();
+  }
+}
+
 .title{
   margin:70px 0px;
   font-size: 63px;
   position: relative;
   display: inline-block;
   text-transform: uppercase;
+  font-family: 'bernier_regularregular';
   &:before,&:after{
     content: "";
     display: block;
@@ -22,11 +29,13 @@
 }
 
 .subtitle{
-  margin-bottom:40px;
+  margin:40px;
   font-size: 35px;
   position: relative;
   display: inline-block;
   text-transform: uppercase;
+  font-family: 'bernier_regularregular';
+  margin-top:0;
   &:before,&:after{
     content: "";
     display: block;
@@ -47,6 +56,7 @@
 a{
   color: #6da3bd;
   text-decoration: solid;
+  @include roboto(medium);
   &:hover{
     text-decoration: none;
   }

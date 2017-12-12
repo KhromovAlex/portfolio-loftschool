@@ -5,33 +5,27 @@
 }
 
 .social__list{
-  width: 138px;
   display: flex;
   justify-content: space-between;
   align-items:center;
+}
+
+.social__item{
+  margin-left: 30px;
+  &:first-child{
+    margin-left: 0;
+  }
 }
 
 .social__link{
   display: block;
 }
 
-.social__svg_footer{
+.social__svg{
   display: inline-block;
   width: 30px;
-  height: 30px;
-  fill: #fff;
-  opacity: .5;
-  transition: opacity .5s;
-  &:hover{
-    opacity: 1;
-  }
-}
-
-.social__svg_header{
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  fill: #fff;
+  height: 23px;
+  fill: #00bfa5;
   opacity: .5;
   transition: opacity .5s;
   &:hover{

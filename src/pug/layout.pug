@@ -10,8 +10,8 @@ html(lang="ru-RU")
         title #{title}
         link(rel="stylesheet" href="css/main.min.css")
     body
-        div(class="content-" + page).wrapper
-            include section/header
+        .wrapper
+            block header
             block content
             include ../../build/img/sprite.svg
         include section/footer

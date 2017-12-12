@@ -25,10 +25,14 @@
   margin-top: 30px;
 }
 
-.nav-link__svg{
+.social__svg_fill{
+  fill: #fff !important;
+}
+
+.header__nav-svg{
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 41px;
+  height: 36px;
   fill: #fff;
   opacity: .5;
   transition: opacity .5s;
@@ -39,11 +43,38 @@
 
 .header__nav-link{
   display: block;
+
 }
 
 .header__center{
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__avatar{
+  z-index: 2;
+  margin-bottom: 30px;
+}
+
+.header__user-name{
+  @include roboto(medium);
+  font-size: 35px;
+  color: #fff;
+  z-index: 2;
+}
+
+.header__desc{
+  @include roboto(light);
+  color: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+}
+
+.header__bg{
+  z-index: 1;
 }
 
 .header__bg-svg{

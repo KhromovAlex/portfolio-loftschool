@@ -5,34 +5,38 @@ block vars
 
 block content
     .welcome-page
-        header.header_welcome
+        header.header-welcome
             a.link-login(href="#") Авторизоваться
-        .welcome-content
-            include ../section/profile
-            .social.social_welcome
-                ul.social__list
-                    li.social__item
-                        a.social__link(href="https://vk.com/sashko_khr" target="_blank")
-                            svg.social__svg_welcome
-                                use(xlink:href="#icon-vk")
-
-                    li.social__item
-                        a.social__link(href="https://github.com/KhromovAlex" target="_blank")
-                            svg.social__svg_welcome
-                                use(xlink:href="#icon-github")
-                    li.social__item
-                        a.social__link(href="#")
-                            svg.social__svg_welcome
-                                use(xlink:href="#icon-in")
-            .nav
-                ul.nav__list
-                    li.nav__item
-                        a.nav__link(href="works.html") Мои работы
-                    li.nav__item
-                        a.nav__link(href="about.html") Обо мне
-                    li.nav__item
-                        a.nav__link(href="blog.html") Блог
-        footer.footer_welcome
-            .copyright
-                span.copyright__text.
-                    © Александр Хромов | создано с любовью в LoftSchool | 2017
+        section.welcome-content
+            .welcome-content__avatar
+                .avatar
+                    img.avatar__img(src="img/welcome/ava.jpg" alt="avatar")
+            .welcome-content__user-name Александр Хромов
+            .welcome-content__desc Личный сайт веб разработчика
+            .welcome-content__social
+                .social
+                    ul.social__list
+                        li.social__item
+                            a.social__link(href="https://vk.com/sashko_khr" target="_blank")
+                                svg.social__svg
+                                    use(xlink:href="#icon-vk")
+                        li.social__item
+                            a.social__link(href="https://github.com/KhromovAlex" target="_blank")
+                                svg.social__svg
+                                    use(xlink:href="#icon-github")
+                        li.social__item
+                            a.social__link(href="#")
+                                svg.social__svg
+                                    use(xlink:href="#icon-in")
+            nav.welcome-nav
+                ul.welcome-nav__list
+                    li.welcome-nav__item
+                        a.welcome-nav__link(href="works.html") Мои работы
+                    li.welcome-nav__item
+                        a.welcome-nav__link(href="about.html") Обо мне
+                    li.welcome-nav__item
+                        a.welcome-nav__link(href="blog.html") Блог
+        footer.footer-welcome
+            .footer-welcome__copyright
+                .copyright-welcome.
+                        © Александр Хромов | создано с любовью в LoftSchool | 2017

@@ -1,0 +1,63 @@
+// Font
+@mixin roboto($style:regular) {
+  @if $style == regular {
+    font-family: 'robotoregular';
+  }
+  @if $style == medium_italic {
+    font-family: 'robotomedium_italic';
+  }
+  @if $style == medium {
+    font-family: 'robotomedium';
+  }
+  @if $style == light_italic {
+    font-family: 'robotolight_italic';
+  }
+  @if $style == light {
+    font-family: 'robotolight';
+  }
+  @if $style == italic {
+    font-family: 'robotoitalic';
+  }
+  @if $style == bold_italic {
+    font-family: 'robotobold_italic';
+  }
+  @if $style == bold {
+    font-family: 'robotobold';
+  }
+}
+
+// Media
+@mixin desktop{
+  @media screen and (max-width: 1200px){
+    @content;
+  }
+}
+
+@mixin laptop1{
+  @media screen and (max-width: 1120px){
+    @content;
+  }
+}
+
+@mixin laptop{
+  @media screen and (max-width: 992px){
+    @content;
+  }
+}
+
+@mixin tablets{
+  @media screen and (max-width: 768px){
+    @content;
+  }
+}
+
+@mixin phones{
+  @media screen and (max-width: 480px){
+    @content;
+  }
+}
+
+//responsive
+@function rem($px) {
+  @return $px / 16px + 0rem;
+}

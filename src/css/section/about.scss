@@ -23,7 +23,47 @@
   padding: 20px 40px;
 }
 
-.google-map{
+.map{
   height: 100vh;
   margin-bottom: -150px;
+  position: relative;
+}
+
+.map__google{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.map__contacts{
+  position: absolute;
+  align-self: center;
+  display: flex;
+  padding: 35px;
+  flex-direction: column;
+  background-color: rgba(#fcfcfc,.85);
+  margin-top: -130px;
+}
+
+.map__title{
+  align-self: center;
+}
+
+.contants__item{
+  display: flex;
+  margin-top: 25px;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+.contacts__text{
+  color: #657981;
+}
+
+.contacts__svg{
+  margin-right: 10px;
+  fill:$green;
+  width: 25px;
+  height: 25px;
 }

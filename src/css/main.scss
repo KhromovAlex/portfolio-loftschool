@@ -8,6 +8,8 @@ $black:#373e42;
 
 //Layout
 @import "normalize";
+@import "_misc/fonts";
+@import "_misc/mixin";
 @import "_misc/options";
 @import "_misc/common-class";
 
@@ -18,4 +20,4 @@ $black:#373e42;
 @import "section/about";
 @import "section/main-nav";
 @import "section/social";
-@import "section/profile";
+@import "section/blog";

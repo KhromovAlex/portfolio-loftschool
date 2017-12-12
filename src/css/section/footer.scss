@@ -4,13 +4,6 @@
   position: relative;
 }
 
-.footer__top{
-  height: 50%;
-  display: flex;
-  flex-direction:row;
-  align-items:center;
-}
-
 .footer__nav{
   margin-left: 30px;
 }
@@ -20,12 +13,26 @@
   margin-right: 30px;
 }
 
-.footer__bottom{
+.social_footer{
+  .social__item{
+    margin-left: 10px;
+  }
+  .social__svg {
+    width: 36px !important;
+    height: 36px !important;
+    fill: #fff !important;
+  }
+}
+
+.footer__row{
   height: 50%;
   display: flex;
   flex-direction:row;
   align-items:center;
   border-top:1px solid rgba(#fff,.1);
+  &:first-child{
+    border:none;
+  }
 }
 
 .footer__about{
@@ -39,7 +46,8 @@
 .footer__copyright{
   margin-left:auto;
   margin-right: 30px;
-  .copyright__text{
-    color: rgba(#fff,0.5);
-  }
+}
+
+.copyright{
+  color: rgba(#fff,0.5);
 }
