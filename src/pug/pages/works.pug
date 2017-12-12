@@ -8,3 +8,51 @@ block header
 
 block content
     section.works
+        .works__top
+            .works__title
+                h2.title мои работы
+            svg.works__top-svg
+        .works__slider
+    section.feedback
+        .feedback__top
+            .feedback__top-title
+                h2.title что обо мне говорят
+            svg.feedback__top-svg
+        .feedback__reviews
+            ul.reviews-list
+                li.reviews__item
+                    svg.reviews__item-svg
+                    .review__text
+                        .text-content Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .review-user
+                        .review-user__avatar
+                            img.review-user__img
+                        .review-user__desc
+                            .review-user__name
+                                .review-user__name-text Ковальчук Дмитрий
+                            .review-user__position
+                                .review-user__position-text основатель Loftschool
+                li.reviews__item
+                    svg.reviews__item-svg
+                    .review__text
+                        .text-content Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                    .review-user
+                        .review-user__avatar
+                            img.review-user__img
+                        .review-user__desc
+                            .review-user__name
+                                .review-user__name-text Сабанцев Владимир
+                            .review-user__position
+                                .review-user__position-text преподаватель
+        .feedback__bottom
+            .feedback__bottom-title
+                h3.subtitle связаться со мной
+            form.feedback-form
+                input(type="text").feedback-form__name
+                input(type="text").feedback-form__email
+                textarea.feedback-form__text
+                .feedback-form__buttons
+                    input(type="submit").feedback-form__submit
+                    input(type="reset").feedback-form__reset
+        .feedback-up
+            svg.feedback-up__svg
