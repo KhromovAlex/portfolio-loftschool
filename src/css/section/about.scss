@@ -1,5 +1,5 @@
 .about{
-  height:100vh;
+  min-height:100vh;
   display: flex;
   flex-direction:row;
   width: 100%;
@@ -9,6 +9,29 @@
   background-color: #efeee9;
   width: 50%;
   padding: 20px;
+  display: flex;
+  flex-direction:row;
+  justify-content: flex-end;
+}
+
+.about__left-title{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.title_about_margin{
+  margin-top: 0;
+}
+
+.about__left-content{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-desc__avatar{
+  margin-bottom: 40px;
 }
 
 .avatar_about{
@@ -17,12 +40,71 @@
   border-radius: 0;
 }
 
+.user-desc__title{
+  display: flex;
+  justify-content: center;
+}
+
 .about__right{
   background-color: #eeebdf;
   width: 50%;
   padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
 }
 
+.about__right-title{
+  align-self: center;
+  width: 310px;
+  text-align: center;
+}
+
+.about__right-skills{
+  margin: 40px;
+}
+
+.skills__item{
+  margin-top: 40px;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+.slills-title{
+  margin-bottom: 20px;
+  @include roboto(medium);
+  font-size: 28px;
+}
+
+.skills__row-list{
+  display: flex;
+}
+
+.skills-row__item{
+  margin-left: 40px;
+  &:first-child{
+    margin-left: 0;
+  }
+}
+
+.skill__title{
+  font-size: 14px;
+  @include roboto(medium);
+  color: $green;
+  position: absolute;
+  width: 60px;
+  text-align: center;
+}
+
+.skill__circle{
+  width: 120px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// section map
 .map{
   height: 100vh;
   margin-bottom: -150px;
@@ -39,17 +121,22 @@
   position: absolute;
   align-self: center;
   display: flex;
-  padding: 35px;
+  padding: 35px 0;
   flex-direction: column;
   background-color: rgba(#fcfcfc,.85);
   margin-top: -130px;
+  border-radius: 5px;
+}
+
+.contacts{
+  margin:0 35px;
 }
 
 .map__title{
   align-self: center;
 }
 
-.contants__item{
+.contacts__item{
   display: flex;
   margin-top: 25px;
   &:first-child{
@@ -58,7 +145,8 @@
 }
 
 .contacts__text{
-  color: #657981;
+  color: $gray;
+  @include roboto(medium);
 }
 
 .contacts__svg{

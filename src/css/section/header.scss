@@ -36,14 +36,15 @@
   fill: #fff;
   opacity: .5;
   transition: opacity .5s;
-  &:hover{
-    opacity: 1;
-  }
 }
 
 .header__nav-link{
   display: block;
-
+  &:hover{
+    .header__nav-svg{
+      opacity: 1;
+    }
+  }
 }
 
 .header__center{
@@ -95,6 +96,11 @@
 
 .arrow__link{
   display: block;
+  &:hover{
+    .arrow__svg{
+      opacity: 1;
+    }
+  }
 }
 
 .arrow__svg{
@@ -104,7 +110,4 @@
   fill: #fff;
   opacity: .7;
   transition: opacity 0.5s;
-  &:hover{
-    opacity: 1;
-  }
 }

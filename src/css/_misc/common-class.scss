@@ -5,12 +5,14 @@ body{
 }
 
 .title{
-  margin:70px 0px;
+  margin:70px 40px;
   font-size: 63px;
   position: relative;
   display: inline-block;
   text-transform: uppercase;
   font-family: 'bernier_regularregular';
+  line-height: 63px;
+  color: $black;
   &:before,&:after{
     content: "";
     display: block;
@@ -18,7 +20,8 @@ body{
     height: 5px;
     background-color: #d0d1d2;
     position: absolute;
-    top:40px;
+    top:30px;
+
   }
   &:before{
     left:-40px;
@@ -36,6 +39,7 @@ body{
   text-transform: uppercase;
   font-family: 'bernier_regularregular';
   margin-top:0;
+  color: $gray;
   &:before,&:after{
     content: "";
     display: block;
@@ -59,5 +63,12 @@ a{
   @include roboto(medium);
   &:hover{
     text-decoration: none;
+  }
+}
+
+.text-content{
+  color: $gray;
+  p{
+    margin: 20px 0;
   }
 }

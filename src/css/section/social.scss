@@ -19,6 +19,11 @@
 
 .social__link{
   display: block;
+  &:hover{
+    .social__svg{
+      opacity: 1;
+    }
+  }
 }
 
 .social__svg{
@@ -28,7 +33,4 @@
   fill: #00bfa5;
   opacity: .5;
   transition: opacity .5s;
-  &:hover{
-    opacity: 1;
-  }
 }
