@@ -10,49 +10,75 @@ block content
     section.works
         .works__top
             .works__title
-                h2.title мои работы
-            svg.works__top-svg
+                h2.title.title_z-index мои работы
+                svg.works-page__svg
+                    use(xlink:href="#icon-works_header")
         .works__slider
+            .slider__info
+                .slider__title
+                    h3.subtitle Сайт 1
+                .slider__skills
+                    .slider__skills-text HTML, CSS, JAVASCRIPT
+                .slider__link-wrap
+                    a.slider__button(href="#")
+                        .slider__button-svg
+                        span.text-link Посмотреть сайт
+            .slider__right-top
+                .slider-screen
+                    img.slider-screen__img(src="img/works/slide.png")
+            .slider__btns
+                a.previous-slide.slider__link#previous
+                    .slider__wrap-img
+                        img.slider__img(src="img/works/slide-1.jpg")
+                    svg.slider__svg
+                        use(xlink:href="#icon-arrow_down")
+                a.next-slide.slider__link#next
+                    .slider__wrap-img
+                        img.slider__img(src="img/works/slide-2.jpg")
+                    svg.slider__svg
+                        use(xlink:href="#icon-portf_arrow_up")
     section.feedback
         .feedback__top
             .feedback__top-title
-                h2.title что обо мне говорят
-            svg.feedback__top-svg
+                h2.title.title_z-index что обо мне говорят
+                svg.works-page__svg
+                    use(xlink:href="#icon-about_header")
         .feedback__reviews
             ul.reviews-list
                 li.reviews__item
-                    svg.reviews__item-svg
                     .review__text
-                        .text-content Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .text-content.text-content_align Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                     .review-user
                         .review-user__avatar
-                            img.review-user__img
+                            img.review-user__img(src="img/works/user1.jpg")
                         .review-user__desc
                             .review-user__name
-                                .review-user__name-text Ковальчук Дмитрий
+                                .review-user__text.review-user__text_bold Ковальчук Дмитрий
                             .review-user__position
-                                .review-user__position-text основатель Loftschool
+                                .review-user__text основатель Loftschool
                 li.reviews__item
-                    svg.reviews__item-svg
                     .review__text
-                        .text-content Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                        .text-content.text-content_align Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
                     .review-user
                         .review-user__avatar
-                            img.review-user__img
+                            img.review-user__img(src="img/works/user2.jpg")
                         .review-user__desc
                             .review-user__name
-                                .review-user__name-text Сабанцев Владимир
+                                .review-user__text.review-user__text_bold Сабанцев Владимир
                             .review-user__position
-                                .review-user__position-text преподаватель
+                                .review-user__text преподаватель
         .feedback__bottom
-            .feedback__bottom-title
-                h3.subtitle связаться со мной
             form.feedback-form
-                input(type="text").feedback-form__name
-                input(type="text").feedback-form__email
-                textarea.feedback-form__text
-                .feedback-form__buttons
-                    input(type="submit").feedback-form__submit
-                    input(type="reset").feedback-form__reset
+                .feedback-form__title
+                    h3.subtitle связаться со мной
+                .feedback-form__input
+                    input(type="text" placeholder="Имя").feedback-form__name
+                    input(type="text" placeholder="Еmail").feedback-form__email
+                    textarea(placeholder="Ваше сообщение").feedback-form__text
+                .feedback-form__buttons-wrap
+                    input(type="submit" value="Отправить").feedback-form__button
+                    input(type="reset" value="Очистить").feedback-form__button
         .feedback-up
-            svg.feedback-up__svg
+            a.feedback-up__link(href="#")
+                svg.feedback-up__svg
+                    use(xlink:href="#icon-portf_arrow_up")

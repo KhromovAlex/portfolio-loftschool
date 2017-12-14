@@ -6,7 +6,8 @@ block vars
 block content
     .welcome-page
         header.header-welcome
-            a.link-login(href="#") Авторизоваться
+            button.link-login(type="button")
+                span.text-link Авторизоваться
         section.welcome-content
             .welcome-content__avatar
                 .avatar
@@ -31,11 +32,14 @@ block content
             nav.welcome-nav
                 ul.welcome-nav__list
                     li.welcome-nav__item
-                        a.welcome-nav__link(href="works.html") Мои работы
+                        a.welcome-nav__link(href="works.html")
+                            span.text-link Мои работы
                     li.welcome-nav__item
-                        a.welcome-nav__link(href="about.html") Обо мне
+                        a.welcome-nav__link(href="about.html")
+                            span.text-link Обо мне
                     li.welcome-nav__item
-                        a.welcome-nav__link(href="blog.html") Блог
+                        a.welcome-nav__link(href="blog.html")
+                            span.text-link Блог
         footer.footer-welcome
             .footer-welcome__copyright
                 .copyright-welcome.

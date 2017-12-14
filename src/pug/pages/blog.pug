@@ -25,7 +25,7 @@ block header
                 a.header__nav-link(href="#")
                     svg.header__nav-svg
                         use(xlink:href="#icon-hamburger")
-        .header__center
+        .header__center.header__center_blog
             .header__avatar
                 .avatar
                     img.avatar__img(src="img/welcome/ava.jpg" alt="avatar")
@@ -34,11 +34,6 @@ block header
                 svg.header__bg-svg.header__bg-svg_blog
                     use(xlink:href="#icon-blog_header")
             .header__desc Статьи, которые я написал
-        .header__bottom
-            .header__arrow
-                a.arrow__link(href="#")
-                    svg.arrow__svg
-                        use(xlink:href="#icon-arrow_down")
 block content
     .blog-wrap
         aside.nav-blog

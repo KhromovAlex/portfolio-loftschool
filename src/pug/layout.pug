@@ -9,9 +9,11 @@ html(lang="ru-RU")
         meta(name="description" content="Описание сайта")
         title #{title}
         link(rel="stylesheet" href="css/main.min.css")
+
     body
         .wrapper
             block header
             block content
             include ../../build/img/sprite.svg
         include section/footer
+        script(src="js/main.js")

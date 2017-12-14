@@ -1,3 +1,7 @@
+.header__center_blog{
+  height: 100%;
+}
+
 .header__title-wrap{
   position: relative;
 }
@@ -50,27 +54,23 @@
 }
 
 .article-blog{
-  padding: 70px 0;
   position: relative;
+  padding-bottom: 70px;
+}
+
+.article-blog + .article-blog{
+  padding-top: 70px;
+
   &:after{
     content: "";
     display: block;
     position: absolute;
-    bottom:0;
+    top:0;
     left: 0;
     background-color: rgba(#f1f1f2,.7);
     width: 680px;
     height: 5px;
 
-  }
-  &:first-child{
-    padding-top: 0;
-  }
-  &:last-child{
-    padding-bottom: 0;
-    &:after{
-      display: none;
-    }
   }
 }
 

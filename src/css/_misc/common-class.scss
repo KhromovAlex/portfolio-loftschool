@@ -66,6 +66,12 @@ a{
   }
 }
 
+.text-link{
+  color: #fff;
+  @include roboto(medium);
+  transition: color .5s;
+}
+
 .text-content{
   color: $gray;
   p{

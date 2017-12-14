@@ -6,6 +6,8 @@
   flex-direction:column;
   justify-content:space-between;
   align-items:center;
+  padding:30px;
+  padding-bottom: 90px;
 }
 
 .header__top{
@@ -15,14 +17,8 @@
   width: 100%;
 }
 
-.header__social{
-  margin:30px 0 0 30px;
-}
-
 .header__nav{
   margin-left: auto;
-  margin-right:30px;
-  margin-top: 30px;
 }
 
 .social__svg_fill{
@@ -88,10 +84,6 @@
   height: 300px;
   opacity: 0.06;
   fill: #fff;
-}
-
-.header__bottom{
-  margin-bottom: 90px;
 }
 
 .arrow__link{

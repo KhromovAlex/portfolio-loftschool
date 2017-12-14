@@ -3,7 +3,7 @@
   background-repeat:no-repeat;
   background-size:cover;
   background-position: center;
-  height:100vh;
+  min-height:100vh;
   padding: 24px 100px 40px;
   display: flex;
   flex-direction:column;
@@ -23,12 +23,15 @@
   padding:15px 27px;
   border:1px solid #fff;
   border-radius: 5px;
-  color: #fff;
-  @include roboto(medium);
+  background-color: transparent;
+  cursor: pointer;
   transition: 0.5s all;
   &:hover{
     background-color: #fff;
-    color: $dark-green;
+    .text-link{
+      color: $dark-green;
+    }
+
   }
 }
 
@@ -38,10 +41,11 @@
   justify-content:flex-end;
   background-color: rgba(252, 252, 252,0.851);
   border-radius: 5px;
+  padding-top: 40px;
 }
 
 .welcome-content__avatar{
-  margin: 40px 0 20px 0;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
@@ -72,18 +76,18 @@
   color: rgba(69, 90, 100, 0.8);
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 .welcome-content__social{
-  margin: 40px 0;
+  margin-bottom: 40px;
 }
 
 .welcome-nav__list{
   display: flex;
 }
 
-.welcome-nav__item {
-  flex:auto;
+.welcome-nav__item{
   &:first-child {
     .welcome-nav__link {
       border-radius: 0 0 0 5px;
@@ -91,21 +95,21 @@
   }
   &:last-child{
     .welcome-nav__link {
-      border-right: 0;
       border-radius: 0 0 5px 0;
     }
   }
 }
 
+.welcome-nav__item + .welcome-nav__item{
+  flex:auto;
+  border-left:2px solid rgba(#dee3e7,.5 );
+}
+
 .welcome-nav__link{
   display: block;
-  font-size: 16px;
-  color: #fff;
   background-color: $green;
   padding: 12px 32px;
   transition:background-color 0.5s;
-  border-right:2px solid rgba(222, 227, 231,0.5 );
-  @include roboto(medium);
   &:hover{
     background-color: $dark-green;
   }

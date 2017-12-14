@@ -10,11 +10,8 @@
   align-items:center;
 }
 
-.social__item{
+.social__item + .social__item{
   margin-left: 30px;
-  &:first-child{
-    margin-left: 0;
-  }
 }
 
 .social__link{
