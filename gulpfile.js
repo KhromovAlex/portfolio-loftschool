@@ -5,6 +5,8 @@ const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
+const sassGlob = require('gulp-sass-glob');
+const cssunit = require('gulp-css-unit');
 
 const del = require('del');
 const plumber = require('gulp-plumber');
@@ -74,6 +76,7 @@ function styles() {
                 };
             })}))
         .pipe(sourcemaps.init())
+        .pipe(sassGlob())
         .pipe(sass({
             outputStyle: 'compressed',
             includePaths: require('node-normalize-scss').includePaths
@@ -81,6 +84,10 @@ function styles() {
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
+        }))
+        .pipe(cssunit({
+            type     :    'px-to-rem',
+            rootSize :    16
         }))
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))

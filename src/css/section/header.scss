@@ -35,7 +35,9 @@
 }
 
 .header__nav-link{
-  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   &:hover{
     .header__nav-svg{
       opacity: 1;

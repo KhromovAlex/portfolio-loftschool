@@ -27,12 +27,6 @@
 }
 
 // Media
-@mixin big{
-  @media screen and (max-width: 1800px){
-    @content;
-  }
-}
-
 @mixin desktop{
   @media screen and (max-width: 1200px){
     @content;

@@ -10,9 +10,9 @@ block content
     section.works
         .works__top
             .works__title
-                h2.title.title_z-index мои работы
+                h2.title.title_z-index#first-section мои работы
                 svg.works-page__svg
-                    use(xlink:href="#icon-works_header")
+                    use(xlink:href="img/sprite.svg#icon-works_header")
         .works__slider
             .slider__info
                 .slider__title
@@ -31,18 +31,18 @@ block content
                     .slider__wrap-img
                         img.slider__img(src="img/works/slide-1.jpg")
                     svg.slider__svg
-                        use(xlink:href="#icon-arrow_down")
+                        use(xlink:href="img/sprite.svg#icon-arrow_down")
                 a.next-slide.slider__link#next
                     .slider__wrap-img
                         img.slider__img(src="img/works/slide-2.jpg")
                     svg.slider__svg
-                        use(xlink:href="#icon-portf_arrow_up")
+                        use(xlink:href="img/sprite.svg#icon-portf_arrow_up")
     section.feedback
         .feedback__top
             .feedback__top-title
                 h2.title.title_z-index что обо мне говорят
                 svg.works-page__svg
-                    use(xlink:href="#icon-about_header")
+                    use(xlink:href="img/sprite.svg#icon-about_header")
         .feedback__reviews
             ul.reviews-list
                 li.reviews__item
@@ -78,7 +78,8 @@ block content
                 .feedback-form__buttons-wrap
                     input(type="submit" value="Отправить").feedback-form__button
                     input(type="reset" value="Очистить").feedback-form__button
+
         .feedback-up
             a.feedback-up__link(href="#")
                 svg.feedback-up__svg
-                    use(xlink:href="#icon-portf_arrow_up")
+                    use(xlink:href="img/sprite.svg#icon-portf_arrow_up")
