@@ -1,7 +1,20 @@
 footer.footer
     .footer__row
         .footer__nav
-            include main-nav
+            nav.main-nav
+                ul.main-nav__list
+                    li.main-nav__item
+                        a.main-nav__link(href="works.html")
+                            span.text-link Мои работы
+                    li.main-nav__item
+                        a.main-nav__link(href="about.html")
+                            span.text-link Обо мне
+                    li.main-nav__item
+                        a.main-nav__link(href="blog.html")
+                            span.text-link Блог
+                    li.main-nav__item
+                        a.main-nav__link(href="/#auth")
+                            span.text-link Авторизация
         .footer__social
             .social.social_footer
                 ul.social__list

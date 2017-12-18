@@ -42,6 +42,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  z-index: 9999;
   &:hover{
     .header__nav-svg{
       opacity: 1;
@@ -108,4 +109,10 @@
   fill: #fff;
   opacity: .7;
   transition: opacity 0.5s;
+}
+
+.header__nav-link_active{
+  position: fixed;
+  top: 30px;
+  right: 30px;
 }

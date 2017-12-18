@@ -3,6 +3,7 @@ extends ../layout
 block vars
     - var title = "Блог";
 
+
 block header
     header.header
         .header__top
@@ -21,10 +22,9 @@ block header
                             a.social__link(href="https://www.instagram.com/" target="_blank")
                                 svg.social__svg.social__svg_fill
                                     use(xlink:href="img/sprite.svg#icon-in")
-            .header__nav
-                button.header__nav-link(type="button")
-                    svg.header__nav-svg
-                        use(xlink:href="img/sprite.svg#icon-hamburger")
+            button.header__nav.header__nav-link(type="button")
+                svg.header__nav-svg
+                    use(xlink:href="img/sprite.svg#icon-hamburger")
         .header__center.header__center_blog
             .header__avatar
                 .avatar
