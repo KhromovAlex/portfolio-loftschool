@@ -1,3 +1,19 @@
+block full-screen-menu
+    .full-screen-menu
+        nav.main-nav
+            ul.main-nav__list
+                li.main-nav__item
+                    a.main-nav__link(href="works.html")
+                        span.text-link_full-screen Мои работы
+                li.main-nav__item
+                    a.main-nav__link(href="about.html")
+                        span.text-link_full-screen Обо мне
+                li.main-nav__item
+                    a.main-nav__link(href="blog.html")
+                        span.text-link_full-screen Блог
+                li.main-nav__item
+                    a.main-nav__link(href="/")
+                        span.text-link_full-screen Авторизация
 header.header
     .header__top
         .header__social
@@ -16,8 +32,8 @@ header.header
                             svg.social__svg.social__svg_fill
                                 use(xlink:href="img/sprite.svg#icon-in")
         button.header__nav.header__nav-link(type="button")
-                svg.header__nav-svg
-                    use(xlink:href="img/sprite.svg#icon-hamburger")
+            svg.header__nav-svg
+                use(xlink:href="img/sprite.svg#icon-hamburger")
     .header__center
         .header__avatar
             .avatar
