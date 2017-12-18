@@ -8,9 +8,13 @@ block header
     include ../section/header
 block content
     section.about
+        .triangle-about
+            svg.triangle-about__svg(viewBox="0 0 1000 86" preserveAspectRatio="none")
+                polygon.triangle-about__svg-left(points="0,0 0,86 500.86,340 500.86,75.5")
+                polygon.triangle-about__svg-right(points="1000,0 1000,86 500,86 500,75.5")
         .about__left
             .about__left-title
-                h2.title.title_about_margin Обо мне
+                h2.title.title_about_margin#first-section Обо мне
             .about__left-content
                 .user-desc
                     .user-desc__avatar
@@ -20,7 +24,7 @@ block content
                         h3.subtitle кто я
                     .user-desc__text
                         .text-content
-                            p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            p Я веб разработчик из Сибири. Мне 23 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
         .about__right
             .about__right-title

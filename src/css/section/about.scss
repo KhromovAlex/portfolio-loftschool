@@ -1,8 +1,25 @@
+.triangle-about{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  margin-bottom:-5px;
+}
+
+.triangle-about__svg-left{
+  fill:#efeee9;
+}
+
+.triangle-about__svg-right{
+  fill:#eeebdf;
+}
+
 .about{
   min-height:100vh;
   display: flex;
   flex-direction:row;
   width: 100%;
+  position: relative;
 }
 
 .about__left{
@@ -12,6 +29,7 @@
   display: flex;
   flex-direction:row;
   justify-content: flex-end;
+  padding-top: 0;
 }
 
 .about__left-title{
@@ -52,6 +70,7 @@
   padding: 20px 40px;
   display: flex;
   flex-direction: column;
+  padding-top: 0;
 }
 
 .about__right-title{

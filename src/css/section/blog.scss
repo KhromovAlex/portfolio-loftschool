@@ -20,12 +20,31 @@
   height: 200px;
 }
 
-.blog-wrap{
+.blog{
   min-height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content:space-between;
-  padding:70px 300px 70px 125px;
+  padding:0 300px 70px 125px;
+  position: relative;
+  background-color: #fff;
+}
+
+.triangle-blog{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  margin-bottom: -5px;
+}
+
+.triangle-blog__svg{
+  width: 100%;
+  fill:#fff;
+}
+
+.blog-wrap{
+
 }
 
 .nav-blog{
@@ -49,7 +68,7 @@
   color: $green;
 }
 
-.blog{
+.blog-content{
   width: 72%;
 }
 

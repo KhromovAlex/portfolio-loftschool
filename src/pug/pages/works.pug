@@ -9,6 +9,10 @@ block header
 block content
     section.works
         .works__top
+            .triangle-works
+                svg.triangle-works__svg(viewBox="0 0 1000 85" preserveAspectRatio="none")
+                    polygon.triangle-works__svg-left(points="0,0 0,86 500.86,340 500.86,75.5")
+                    polygon.triangle-works__svg-right(points="1000,0 1000,86 500,86 500,75.5")
             .works__title
                 h2.title.title_z-index#first-section мои работы
                 svg.works-page__svg
@@ -27,12 +31,12 @@ block content
                 .slider-screen
                     img.slider-screen__img(src="img/works/slide.png")
             .slider__btns
-                a.previous-slide.slider__link#previous
+                button.previous-slide.slider__link#previous
                     .slider__wrap-img
                         img.slider__img(src="img/works/slide-1.jpg")
                     svg.slider__svg
                         use(xlink:href="img/sprite.svg#icon-arrow_down")
-                a.next-slide.slider__link#next
+                button.next-slide.slider__link#next
                     .slider__wrap-img
                         img.slider__img(src="img/works/slide-2.jpg")
                     svg.slider__svg

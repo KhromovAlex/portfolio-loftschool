@@ -7,7 +7,6 @@ function addEventFlip() {
     buttonAuth.addEventListener('click', function(e){
         block.classList.add("go-to-auth");
         buttonAuth.classList.add("hidelink");
-        console.log(e.target);
     });
 
     bod.addEventListener('click', function (e) {
@@ -23,4 +22,10 @@ function addEventFlip() {
     });
 }
 
-module.exports = addEventFlip;
+function flipInit() {
+    if(block || buttonAuth || buttonGoHome){
+        addEventFlip();
+    }
+}
+
+module.exports = flipInit;

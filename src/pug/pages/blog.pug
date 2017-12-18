@@ -18,11 +18,11 @@ block header
                                 svg.social__svg.social__svg_fill
                                     use(xlink:href="img/sprite.svg#icon-github")
                         li.social__item
-                            a.social__link(href="#")
+                            a.social__link(href="https://www.instagram.com/" target="_blank")
                                 svg.social__svg.social__svg_fill
                                     use(xlink:href="img/sprite.svg#icon-in")
             .header__nav
-                a.header__nav-link(href="#")
+                button.header__nav-link(type="button")
                     svg.header__nav-svg
                         use(xlink:href="img/sprite.svg#icon-hamburger")
         .header__center.header__center_blog
@@ -35,7 +35,11 @@ block header
                     use(xlink:href="img/sprite.svg#icon-blog_header")
             .header__desc Статьи, которые я написал
 block content
-    .blog-wrap
+    .blog
+        .triangle-blog
+            svg.triangle-blog__svg(viewBox="0 0 1000 86" preserveAspectRatio="none")
+                polygon.triangle-works__svg-left(points="0,0 0,86 500.86,340 500.86,75.5")
+                polygon.triangle-works__svg-right(points="1000,0 1000,86 500,86 500,75.5")
         aside.nav-blog
             ul.nav-blog__list
                 li.nav-blog__item
@@ -47,7 +51,7 @@ block content
                 li.nav-blog__item
                     a(href="#").nav-blog__link.
                         Самый необходимый набор Gulp плагинов
-        section.blog
+        section.blog-content
             article.article-blog
                 h3.article-blog__title.
                     Самое важное в SASS
