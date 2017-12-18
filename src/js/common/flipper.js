@@ -1,31 +1,45 @@
 const block = document.getElementById('flipper-welcome');
-const buttonAuth = document.getElementById('link-login-welcome');
+const btnLoginWelcome = document.getElementById('link-login-welcome');
 const buttonGoHome = document.getElementById('go-home-welcome');
 const bod = document.body;
 
 function addEventFlip() {
-    buttonAuth.addEventListener('click', function(e){
+    btnLoginWelcome.addEventListener('click', function(e){
         block.classList.add("go-to-auth");
-        buttonAuth.classList.add("hidelink");
+        btnLoginWelcome.classList.add("hidelink");
     });
 
     bod.addEventListener('click', function (e) {
         if (e.target.id === 'welcome-page' || e.target.id === 'header-welcome') {
             block.classList.remove("go-to-auth");
-            buttonAuth.classList.remove("hidelink");
+            btnLoginWelcome.classList.remove("hidelink");
+            if(window.location.hash === '#auth'){
+                window.location.hash = '';
+            }
         }
     });
 
     buttonGoHome.addEventListener('click', function (e) {
         block.classList.remove("go-to-auth");
-        buttonAuth.classList.remove("hidelink");
+        btnLoginWelcome.classList.remove("hidelink");
+        if(window.location.hash === '#auth'){
+            window.location.hash = '';
+        }
     });
 }
 
+function linkAuth() {
+    if(window.location.hash === '#auth'){
+        block.classList.add("go-to-auth");
+        btnLoginWelcome.classList.add("hidelink");
+    }
+}
+
 function flipInit() {
-    if(block || buttonAuth || buttonGoHome){
+    if(block || btnLoginWelcome || buttonGoHome){
         addEventFlip();
     }
+    linkAuth();
 }
 
 module.exports = flipInit;
