@@ -1,3 +1,5 @@
+(function () {
+
 const block = document.getElementsByClassName('full-screen-menu');
 const btn = document.getElementsByClassName('header__nav-link');
 
@@ -18,3 +20,5 @@ function menuInit() {
 }
 
 module.exports = menuInit;
+
+})();

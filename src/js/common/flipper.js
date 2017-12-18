@@ -1,45 +1,49 @@
-const block = document.getElementById('flipper-welcome');
-const btnLoginWelcome = document.getElementById('link-login-welcome');
+(function () {
+
+const flipBlock = document.getElementById('flipper-welcome');
+const buttonLoginWelcome = document.getElementById('link-login-welcome');
 const buttonGoHome = document.getElementById('go-home-welcome');
-const bod = document.body;
+const body = document.body;
+
+function goHome() {
+    flipBlock.classList.remove("go-to-auth");
+    buttonLoginWelcome.classList.remove("hidelink");
+    if(window.location.hash === '#auth'){
+        window.location.hash = '';
+    }
+}
 
 function addEventFlip() {
-    btnLoginWelcome.addEventListener('click', function(e){
-        block.classList.add("go-to-auth");
-        btnLoginWelcome.classList.add("hidelink");
+    buttonLoginWelcome.addEventListener('click', function(e){
+        flipBlock.classList.add("go-to-auth");
+        buttonLoginWelcome.classList.add("hidelink");
     });
 
-    bod.addEventListener('click', function (e) {
+    body.addEventListener('click', function (e) {
         if (e.target.id === 'welcome-page' || e.target.id === 'header-welcome') {
-            block.classList.remove("go-to-auth");
-            btnLoginWelcome.classList.remove("hidelink");
-            if(window.location.hash === '#auth'){
-                window.location.hash = '';
-            }
+            goHome();
         }
     });
 
     buttonGoHome.addEventListener('click', function (e) {
-        block.classList.remove("go-to-auth");
-        btnLoginWelcome.classList.remove("hidelink");
-        if(window.location.hash === '#auth'){
-            window.location.hash = '';
-        }
+        goHome();
     });
 }
 
 function linkAuth() {
     if(window.location.hash === '#auth'){
-        block.classList.add("go-to-auth");
-        btnLoginWelcome.classList.add("hidelink");
+        flipBlock.classList.add("go-to-auth");
+        buttonLoginWelcome.classList.add("hidelink");
     }
 }
 
 function flipInit() {
-    if(block || btnLoginWelcome || buttonGoHome){
+    if(flipBlock || buttonLoginWelcome || buttonGoHome){
         addEventFlip();
     }
     linkAuth();
 }
 
 module.exports = flipInit;
+
+})();
