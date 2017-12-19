@@ -295,6 +295,7 @@
 
 .front,.back {
   backface-visibility: hidden;
+  transition: opacity .7s;
 }
 
 .back{
@@ -306,10 +307,6 @@
   transform: rotateY(180deg);
 }
 
-
-
-
-
-
-
-
+.front_opacity, .back_opacity{
+  opacity: 0;
+}
