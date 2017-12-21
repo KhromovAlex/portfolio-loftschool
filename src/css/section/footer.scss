@@ -2,6 +2,10 @@
   background-color: rgba($black,0.851);
   height: 150px;
   position: relative;
+
+  @include tablets{
+    height: auto;
+  }
 }
 
 .footer__row + .footer__row{
@@ -13,10 +17,28 @@
   display: flex;
   align-items:center;
   padding:0 30px;
+
+  @include tablets{
+    flex-direction: column;
+  }
+
+  @include phones{
+    padding:0 15px;
+  }
+}
+
+.footer__nav{
+  @include tablets{
+    margin-top: 30px;
+  }
 }
 
 .footer__social, .footer__copyright{
   margin-left:auto;
+
+  @include tablets{
+    margin: 20px 0;
+  }
 }
 
 .social_footer{
@@ -32,6 +54,25 @@
 
 .footer__about-text{
   color: rgba(#fff,0.5);
+  padding-right: 50px;
+
+  @include desktop{
+    padding-right: 15%;
+  }
+
+  @include tablets{
+    margin-top: 20px;
+    text-align: center;
+    padding-right: 0;
+  }
+
+
+}
+
+.footer__copyright{
+  @include phones{
+    text-align: center;
+  }
 }
 
 .copyright{

@@ -8,6 +8,13 @@
   align-items:center;
   padding:30px;
   padding-bottom: 90px;
+  min-height: 510px;
+  transition: padding .5s;
+
+  @include phones{
+    padding:10px;
+    padding-bottom: 50px;
+  }
 }
 
 .header__top{
@@ -57,10 +64,22 @@
   flex-direction:column;
   justify-content: center;
   align-items: center;
+
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bg-svg/portfolio_header.svg');
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
 }
 
 .header__avatar{
-  z-index: 2;
   margin-bottom: 30px;
 }
 
@@ -68,29 +87,11 @@
   @include roboto(medium);
   font-size: 35px;
   color: #fff;
-  z-index: 2;
 }
 
 .header__desc{
   @include roboto(light);
   color: rgba(255, 255, 255, 0.8);
-  z-index: 2;
-}
-
-.header__bg{
-  z-index: 1;
-}
-
-.header__bg-svg{
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -588px;
-  width: 1200px;
-  height: 300px;
-  opacity: 0.06;
-  fill: #fff;
 }
 
 .arrow__link{
@@ -115,4 +116,9 @@
   position: fixed;
   top: 30px;
   right: 30px;
+
+  @include phones{
+    top: 10px;
+    right: 10px;
+  }
 }

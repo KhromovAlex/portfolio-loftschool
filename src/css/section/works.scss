@@ -4,6 +4,29 @@
   flex-direction: column;
   width: 100%;
   position: relative;
+
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 100%;
+    left: 0;
+    height:150px;
+    background-image: url('../img/bg-svg/triangle-works.svg');
+    transition: height .5s;
+
+    @include desktop{
+      height: 100px;
+    }
+    @include tablets{
+      height: 70px;
+    }
+    @include phones{
+      height: 30px;
+    }
+  }
+
 }
 
 .works__top{
@@ -13,21 +36,22 @@
   align-items: center;
 }
 
-.triangle-works{
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  margin-bottom:-5px;
-  fill:#faf8f0;
-}
-
 .works__title{
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: -35px;
+
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    background: url('../img/bg-svg/works_header.svg') no-repeat center center;
+    background-size: contain;
+  }
+
 }
 
 .works__slider{
@@ -35,6 +59,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 100vh;
+
+  @include tablets{
+    height: auto;
+  }
 }
 
 .slider__info{
@@ -45,6 +73,12 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @include tablets{
+    height: auto;
+    width: 100%;
+    padding:20px 10px 60px;
+  }
 }
 
 .slider__skills{
@@ -77,6 +111,14 @@
   justify-content: center;
   align-items: center;
   background-color: #efebe0;
+
+  @include tablets{
+    height: auto;
+    width: 100%;
+    //padding:100px 0 45px;
+    padding:45px 0;
+    order: -10;
+  }
 }
 
 .slider-screen{
@@ -93,6 +135,11 @@
   height: 30%;
   width: 50%;
   display: flex;
+
+  @include tablets{
+    height: 200px;
+    width: 100%;
+  }
 }
 
 .slider__link{
@@ -113,6 +160,14 @@
   display: flex;
   height: 100%;
   width: 100%;
+
+  @include desktop{
+    height: 225px;
+  }
+
+  @include tablets{
+    height: 215px;
+  }
 }
 
 .slider__img{
@@ -149,23 +204,38 @@
   align-items: center;
   width: 380px;
   text-align: center;
-}
 
-.title_z-index{
-  z-index: 10;
-}
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    background: url('../img/bg-svg/about_header.svg') no-repeat center center;
+    background-size: contain;
+  }
 
-.works-page__svg{
-  position: absolute;
-  width: 500px;
-  height: 200px;
-  fill: #6e7171;
-  opacity: .07;
+  @include tablets{
+    width: 100%;
+  }
+
+  @include phones{
+    width: 250px;
+  }
 }
 
 .feedback__reviews{
   width: 50%;
   margin-bottom: 70px;
+
+  @include desktop{
+    width: 63%;
+  }
+
+  @include tablets{
+    width: 100%;
+  }
+
 }
 
 .reviews-list{
@@ -185,10 +255,23 @@
     color: $black;
     opacity: .2;
   }
+
+  @include phones{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &:before{
+      align-self: center;
+    }
+  }
 }
 
 .review__text{
   margin-top: 30px;
+
+  @include phones{
+    margin-top: 20px;
+  }
 }
 
 .text-content_align{
@@ -199,6 +282,10 @@
   display: flex;
   margin-top: 30px;
   align-items: center;
+
+  @include phones{
+    margin-top: 13px;
+  }
 }
 
 .review-user__avatar{
@@ -222,12 +309,15 @@
   font-weight:bold;
 }
 
-.feedback__bottom{
+.feedback____form-wrap{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 70px;
+  position: relative;
+}
 
+.feedback-blur{
 
 }
 
@@ -235,8 +325,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(#fff,.2);
   border-radius: 5px;
+  background-color: rgba(#fff,.15);
+  z-index: 2;
 }
 
 .feedback-form__title{

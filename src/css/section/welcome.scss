@@ -3,12 +3,19 @@
   background-repeat:no-repeat;
   background-size:cover;
   background-position: center;
-  min-height:100vh;
+  height:100vh;
+  min-height:600px;
   padding: 24px 100px 40px;
   display: flex;
   flex-direction:column;
   justify-content: space-between;
   align-items:center;
+  @include desktop{
+    padding:24px 24px 40px;
+  }
+  @include phones{
+    padding:10px;
+  }
 }
 
 .header-welcome{
@@ -16,6 +23,9 @@
   display: flex;
   flex-direction:row;
   justify-content:flex-end;
+  @include phones{
+    justify-content:center;
+  }
 }
 
 .link-login{
@@ -113,13 +123,22 @@
   background-color: $green;
   padding: 12px 32px;
   transition:background-color 0.5s;
+  @include phones{
+    padding:12px 20px;
+    text-align: center;
+  }
   &:hover{
     background-color: $dark-green;
   }
 }
 
 .copyright-welcome{
-    color: #818181;
+  color: rgba(#fff,.5);
+  @include roboto(light);
+  @include phones{
+    padding: 0 40px;
+    text-align: center;
+  }
 }
 
 // Back block
@@ -273,7 +292,7 @@
   }
 }
 
-  // Flip
+// Flip
 
 .go-to-auth{
   transform: rotateY(180deg);
@@ -286,6 +305,9 @@
 
 .flip-container {
   perspective: 1000;
+  @include phones{
+    //width: 100%;
+  }
 }
 
 .flipper {

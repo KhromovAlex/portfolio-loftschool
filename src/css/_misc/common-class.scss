@@ -66,6 +66,15 @@ a{
   &:after{
     right:-40px;
   }
+
+  @include tablets{
+    font-size: 49px;
+    margin:50px 40px;
+  }
+
+  @include phones{
+    font-size: 35px;
+  }
 }
 
 .subtitle{
@@ -91,6 +100,15 @@ a{
   }
   &:after{
     right: -40px;
+  }
+
+  @include tablets{
+    font-size: 30px;
+    margin:20px 40px;
+  }
+
+  @include phones{
+    font-size: 21px;
   }
 }
 
