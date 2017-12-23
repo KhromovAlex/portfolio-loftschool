@@ -70,10 +70,15 @@ a{
   @include tablets{
     font-size: 49px;
     margin:50px 40px;
+    &:before,&:after{
+      top: 26px;
+    }
   }
 
   @include phones{
     font-size: 35px;
+    margin-bottom: 30px;
+
   }
 }
 
@@ -109,6 +114,9 @@ a{
 
   @include phones{
     font-size: 21px;
+    &:before,&:after{
+      top: 10px;
+    }
   }
 }
 

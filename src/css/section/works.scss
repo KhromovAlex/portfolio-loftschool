@@ -60,7 +60,7 @@
   flex-wrap: wrap;
   height: 100vh;
 
-  @include tablets{
+  @include laptop{
     height: auto;
   }
 }
@@ -74,7 +74,7 @@
   align-items: center;
   height: 100%;
 
-  @include tablets{
+  @include laptop{
     height: auto;
     width: 100%;
     padding:20px 10px 60px;
@@ -112,10 +112,9 @@
   align-items: center;
   background-color: #efebe0;
 
-  @include tablets{
+  @include laptop{
     height: auto;
     width: 100%;
-    //padding:100px 0 45px;
     padding:45px 0;
     order: -10;
   }
@@ -136,7 +135,7 @@
   width: 50%;
   display: flex;
 
-  @include tablets{
+  @include laptop{
     height: 200px;
     width: 100%;
   }
@@ -221,6 +220,7 @@
 
   @include phones{
     width: 250px;
+
   }
 }
 
@@ -230,6 +230,10 @@
 
   @include desktop{
     width: 63%;
+  }
+
+  @include laptop{
+    width: 90%;
   }
 
   @include tablets{
@@ -256,10 +260,13 @@
     opacity: .2;
   }
 
-  @include phones{
+  @media screen and (max-width: 560px){
     width: 100%;
     display: flex;
     flex-direction: column;
+    &:first-child{
+      padding-top: 0;
+    }
     &:before{
       align-self: center;
     }
@@ -332,6 +339,12 @@
 
 .feedback-form__title{
   margin:35px 20px 0;
+
+  @include phones{
+    .subtitle{
+      margin-top: 0;
+    }
+  }
 }
 
 .feedback-form__input{

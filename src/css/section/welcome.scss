@@ -1,8 +1,4 @@
 .welcome-page{
-  background-image: url('../img/welcome/bg-welcome.jpg');
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position: center;
   height:100vh;
   min-height:600px;
   padding: 24px 100px 40px;
@@ -13,6 +9,14 @@
   @include desktop{
     padding:24px 24px 40px;
   }
+
+  @include tablets{
+    background-image: url('../img/welcome/bg-welcome.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+
   @include phones{
     padding:10px;
   }
@@ -146,6 +150,17 @@
 .welcome-auth__title{
   display: flex;
   justify-content: center;
+  @include tablets{
+    .subtitle{
+      font-size: 30px;
+      margin:0 40px 40px 40px;
+      &:before,&:after{
+        top: 50%;
+        margin-top: -2.5px;
+      }
+
+    }
+  }
 }
 
 .welcome-nav__link_auth{
@@ -279,6 +294,7 @@
   top: 0;
   left: -30px;
   z-index: 9999;
+
 }
 
 .welcome-auth__radio:checked + .welcome-auth__radio-label .welcome-auth__radio-block{
@@ -289,6 +305,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
+
   }
 }
 
@@ -331,4 +348,38 @@
 
 .front_opacity, .back_opacity{
   opacity: 0;
+}
+
+
+//parallax
+
+#parallax{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  min-height: 600px;
+  background: url("../img/parallax/layer.jpg");
+  z-index: -10;
+
+  @include tablets{
+    display: none;
+  }
+}
+
+.parallax__layer{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.parallax__img{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20%);
 }
