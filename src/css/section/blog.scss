@@ -43,7 +43,7 @@
     left: 0;
     height:150px;
     background-image: url('../img/bg-svg/triangle-blog.svg');
-
+    transform: translateY(2px);
     transition: height .5s;
 
     @include desktop{

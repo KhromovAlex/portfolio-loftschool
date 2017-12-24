@@ -12,7 +12,6 @@
         window.addEventListener('scroll',function () {
             let wScroll = window.pageYOffset;
             moveLayers(background[0],wScroll,30);
-            console.log(wScroll);
         });
     }
 

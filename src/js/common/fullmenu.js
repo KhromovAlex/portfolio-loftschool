@@ -1,20 +1,20 @@
 (function () {
 
 const block = document.getElementsByClassName('full-screen-menu');
-const btn = document.getElementsByClassName('header__nav-link');
+const button = document.getElementsByClassName('hamburger-header');
 
 
 function addEventMenu() {
-    btn[0].addEventListener('click', function(e){
+    button[0].addEventListener('click', function(e){
         block[0].classList.toggle("full-screen-menu_active");
-        btn[0].classList.toggle('header__nav-link_active');
+        button[0].classList.toggle('hamburger-header_active');
 
     });
 
 }
 
 function menuInit() {
-    if(block[0] || btn[0]){
+    if(block[0] || button[0]){
         addEventMenu();
     }
 }
