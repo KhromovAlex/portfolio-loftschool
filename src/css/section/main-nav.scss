@@ -52,6 +52,9 @@
   }
   .main-nav__item + .main-nav__item {
     margin-top: 90px;
+    @include phones{
+      margin-top: 50px;
+    }
   }
 
   .main-nav__link{
@@ -85,5 +88,13 @@
     display: inline-block;
     line-height: 63px;
     transition: all .5s;
+
+    @include tablets{
+      font-size: 49px;
+    }
+
+    @include phones{
+      font-size: 35px;
+    }
   }
 }

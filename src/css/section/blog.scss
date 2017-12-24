@@ -29,44 +29,68 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
-  padding:70px 300px 70px 125px;
+
+  padding:70px 110px;
   position: relative;
   background-color: #fff;
 
-  &:before{
+  &:before {
     content: "";
     display: block;
     position: absolute;
     width: 100%;
     bottom: 100%;
     left: 0;
-    height:150px;
+    height: 150px;
     background-image: url('../img/bg-svg/triangle-blog.svg');
     transform: translateY(2px);
     transition: height .5s;
-
-    @include desktop{
+  }
+  @include desktop {
+    padding:70px 45px;
+    &:before{
       height: 100px;
     }
-    @include tablets{
+  }
+  @include tablets {
+    &:before{
       height: 70px;
     }
-    @include phones{
+  }
+  @include phones {
+    &:before{
       height: 30px;
     }
   }
-
 }
+
+
+
 
 .nav-blog{
   width: 22%;
+  margin-right: 90px;
+  @include laptop{
+    width: 284px;
+    min-width: 284px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    left: -284px;
+    padding: 15px 20px;
+    transition: left 0.3s;
+    background: $green;
+    z-index: 2000;
+  }
 }
 
 .nav-blog__link{
   display: block;
   text-align: right;
   padding: 15px 25px;
+  padding-left: 0;
   color:$gray;
   transition: color .5s;
   border-right: 3px transparent solid;
@@ -81,7 +105,11 @@
 }
 
 .blog-content{
-  width: 72%;
+  width: 55%;
+
+  @include desktop{
+    width: 78%;
+  }
 }
 
 .article-blog{
@@ -103,6 +131,12 @@
     height: 5px;
 
   }
+
+  @include desktop{
+    &:after{
+      width: 100%;
+    }
+  }
 }
 
 .article-blog__title{
@@ -116,10 +150,16 @@
   color:rgba($green,.7);
   margin-bottom: 30px;
   margin-left: 20px;
+  @include desktop{
+    margin-left: 0;
+  }
 }
 
 .article-blog__text{
   margin-left: 20px;
+  @include desktop{
+    margin-left: 0;
+  }
 }
 
 
