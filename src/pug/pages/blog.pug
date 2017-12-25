@@ -6,6 +6,9 @@ block vars
 
 block header
     header.header
+        .parallax-scroll
+            .parallax-scroll__layer
+                img.parallax-scroll__img(src="img/header/bg_for_parallax.jpg")
         .header__top
             .header__social
                 .social
@@ -22,24 +25,19 @@ block header
                             a.social__link(href="https://www.instagram.com/" target="_blank")
                                 svg.social__svg.social__svg_fill
                                     use(xlink:href="img/sprite.svg#icon-in")
-            button.header__nav.header__nav-link(type="button")
-                svg.header__nav-svg
-                    use(xlink:href="img/sprite.svg#icon-hamburger")
+            button.header__nav.hamburger-header#hamburger-header(type="button")
+                span.hamburger-header__line
+                span.hamburger-header__line
+                span.hamburger-header__line                                 
         .header__center.header__center_blog
             .header__avatar
                 .avatar
                     img.avatar__img(src="img/welcome/ava.jpg" alt="avatar")
             .header__title-wrap
                 h1.title.title_header Блог
-                svg.header__bg-svg.header__bg-svg_blog
-                    use(xlink:href="img/sprite.svg#icon-blog_header")
             .header__desc Статьи, которые я написал
 block content
     .blog
-        .triangle-blog
-            svg.triangle-blog__svg(viewBox="0 0 1000 86" preserveAspectRatio="none")
-                polygon.triangle-works__svg-left(points="0,0 0,86 500.86,340 500.86,75.5")
-                polygon.triangle-works__svg-right(points="1000,0 1000,86 500,86 500,75.5")
         aside.nav-blog
             ul.nav-blog__list
                 li.nav-blog__item

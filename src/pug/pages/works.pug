@@ -9,14 +9,8 @@ block header
 block content
     section.works
         .works__top
-            .triangle-works
-                svg.triangle-works__svg(viewBox="0 0 1000 85" preserveAspectRatio="none")
-                    polygon.triangle-works__svg-left(points="0,0 0,86 500.86,340 500.86,75.5")
-                    polygon.triangle-works__svg-right(points="1000,0 1000,86 500,86 500,75.5")
             .works__title
-                h2.title.title_z-index#first-section мои работы
-                svg.works-page__svg
-                    use(xlink:href="img/sprite.svg#icon-works_header")
+                h2.title#first-section мои работы
         .works__slider
             .slider__info
                 .slider__title
@@ -42,11 +36,11 @@ block content
                     svg.slider__svg
                         use(xlink:href="img/sprite.svg#icon-portf_arrow_up")
     section.feedback
+        .feedback__background
+            img.feedback__background-img(src="img/works/feedback.jpg")
         .feedback__top
             .feedback__top-title
-                h2.title.title_z-index что обо мне говорят
-                svg.works-page__svg
-                    use(xlink:href="img/sprite.svg#icon-about_header")
+                h2.title что обо мне говорят
         .feedback__reviews
             ul.reviews-list
                 li.reviews__item
@@ -71,17 +65,19 @@ block content
                                 .review-user__text.review-user__text_bold Сабанцев Владимир
                             .review-user__position
                                 .review-user__text преподаватель
-        .feedback__bottom
-            form.feedback-form
-                .feedback-form__title
-                    h3.subtitle связаться со мной
-                .feedback-form__input
-                    input(type="text" placeholder="Имя").feedback-form__name
-                    input(type="text" placeholder="Еmail").feedback-form__email
-                    textarea(placeholder="Ваше сообщение").feedback-form__text
-                .feedback-form__buttons-wrap
-                    input(type="submit" value="Отправить").feedback-form__button
-                    input(type="reset" value="Очистить").feedback-form__button
+        .feedback____blur-wrap
+            .feedback-blur
+            .feedback-form-wrap
+                form.feedback-form
+                    .feedback-form__title
+                        h3.subtitle связаться со мной
+                    .feedback-form__input
+                        input(type="text" placeholder="Имя").feedback-form__name
+                        input(type="text" placeholder="Еmail").feedback-form__email
+                        textarea(placeholder="Ваше сообщение").feedback-form__text
+                    .feedback-form__buttons-wrap
+                        input(type="submit" value="Отправить").feedback-form__button
+                        input(type="reset" value="Очистить").feedback-form__button
 
         .feedback-up
             a.feedback-up__link(href="#")

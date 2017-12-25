@@ -8,24 +8,19 @@ block header
     include ../section/header
 block content
     section.about
-        .triangle-about
-            svg.triangle-about__svg(viewBox="0 0 1000 86" preserveAspectRatio="none")
-                polygon.triangle-about__svg-left(points="0,0 0,86 500.86,340 500.86,75.5")
-                polygon.triangle-about__svg-right(points="1000,0 1000,86 500,86 500,75.5")
         .about__left
             .about__left-title
                 h2.title.title_about_margin#first-section Обо мне
-            .about__left-content
-                .user-desc
-                    .user__photo
-                        .avatar.avatar_size.avatar_border-radius_none
-                            img.avatar__img(src="img/welcome/ava.jpg" alt="avatar")
-                    .user-desc__title
-                        h3.subtitle кто я
-                    .user-desc__text
-                        .text-content
-                            p Я веб разработчик из Сибири. Мне 23 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+            .about__left-content.user-desc
+                .user__photo
+                    .avatar.avatar_size.avatar_border-radius_none
+                        img.avatar__img(src="img/welcome/ava.jpg" alt="avatar")
+                .user-desc__title
+                    h3.subtitle кто я
+                .user-desc__text
+                    .text-content
+                        p Я веб разработчик из Сибири. Мне 23 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
         .about__right
             .about__right-title
                 h3.subtitle чем я могу быть вам полезен
@@ -44,8 +39,8 @@ block content
                                     .skill__circle
                                         svg.circles(viewBox="0 0 110 110")
                                             circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                            circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55")
-                                        .skill__title #{skill}
+                                            circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                        span.skill__title #{skill}
                     li.skills__item
                         .skills__row
                             .skills__row-title
@@ -56,8 +51,8 @@ block content
                                     .skill__circle
                                         svg.circles(viewBox="0 0 110 110")
                                             circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                            circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55")
-                                        .skill__title #{skill}
+                                            circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                        span.skill__title #{skill}
                     li.skills__item
                         .skills__row
                             .skills__row-title
@@ -68,11 +63,10 @@ block content
                                     .skill__circle
                                         svg.circles(viewBox="0 0 110 110")
                                             circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                            circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55")
-                                        .skill__title #{skill}
+                                            circle.circle__second.circle-100(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                        span.skill__title #{skill}
     section.map
         .map__google
-            iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1183.7997264858889!2d87.33798673606992!3d53.60060825723373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1512794618212" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen)
             .map__contacts
                 h3.subtitle.map__title контакты
                 ul.contacts
@@ -92,3 +86,4 @@ block content
                         svg.contacts__svg
                             use(xlink:href="img/sprite.svg#icon-map_marker")
                         .contacts__text Кемеровская обл. город Осинники
+            iframe.iframe-map(src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1183.7997264858889!2d87.33798673606992!3d53.60060825723373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1512794618212" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen)

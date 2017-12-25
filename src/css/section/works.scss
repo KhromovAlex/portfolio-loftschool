@@ -4,6 +4,30 @@
   flex-direction: column;
   width: 100%;
   position: relative;
+
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 100%;
+    left: 0;
+    height:150px;
+    background-image: url('../img/bg-svg/triangle-works.svg');
+    transition: height .5s;
+    transform: translateY(2px);
+
+    @include desktop{
+      height: 100px;
+    }
+    @include tablets{
+      height: 70px;
+    }
+    @include phones{
+      height: 30px;
+    }
+  }
+
 }
 
 .works__top{
@@ -13,21 +37,22 @@
   align-items: center;
 }
 
-.triangle-works{
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  margin-bottom:-5px;
-  fill:#faf8f0;
-}
-
 .works__title{
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: -35px;
+
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    background: url('../img/bg-svg/works_header.svg') no-repeat center center;
+    background-size: contain;
+  }
+
 }
 
 .works__slider{
@@ -35,6 +60,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 100vh;
+
+  @include laptop{
+    height: auto;
+  }
 }
 
 .slider__info{
@@ -45,6 +74,12 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @include laptop{
+    height: auto;
+    width: 100%;
+    padding:20px 10px 60px;
+  }
 }
 
 .slider__skills{
@@ -77,6 +112,13 @@
   justify-content: center;
   align-items: center;
   background-color: #efebe0;
+
+  @include laptop{
+    height: auto;
+    width: 100%;
+    padding:45px 0;
+    order: -10;
+  }
 }
 
 .slider-screen{
@@ -93,6 +135,11 @@
   height: 30%;
   width: 50%;
   display: flex;
+
+  @include laptop{
+    height: 200px;
+    width: 100%;
+  }
 }
 
 .slider__link{
@@ -113,6 +160,14 @@
   display: flex;
   height: 100%;
   width: 100%;
+
+  @include desktop{
+    height: 225px;
+  }
+
+  @include tablets{
+    height: 215px;
+  }
 }
 
 .slider__img{
@@ -132,14 +187,12 @@
 // отзывы
 .feedback{
   min-height: 100vh;
-  background-image: url('../img/works/feedback.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 70px;
+  position: relative;
+  overflow: hidden;
 }
 
 .feedback__top-title{
@@ -149,23 +202,60 @@
   align-items: center;
   width: 380px;
   text-align: center;
+
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    background: url('../img/bg-svg/about_header.svg') no-repeat center center;
+    background-size: contain;
+  }
+
+  @include tablets{
+    width: 100%;
+  }
+
+  @include phones{
+    width: 250px;
+
+  }
 }
 
-.title_z-index{
-  z-index: 10;
-}
-
-.works-page__svg{
+.feedback__background{
   position: absolute;
-  width: 500px;
-  height: 200px;
-  fill: #6e7171;
-  opacity: .07;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  min-width: 900px;
+}
+
+.feedback__background-img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
 }
 
 .feedback__reviews{
   width: 50%;
   margin-bottom: 70px;
+
+  @include desktop{
+    width: 63%;
+  }
+
+  @include laptop{
+    width: 90%;
+  }
+
+  @include tablets{
+    width: 100%;
+  }
+
 }
 
 .reviews-list{
@@ -185,10 +275,26 @@
     color: $black;
     opacity: .2;
   }
+
+  @media screen and (max-width: 560px){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &:first-child{
+      padding-top: 0;
+    }
+    &:before{
+      align-self: center;
+    }
+  }
 }
 
 .review__text{
   margin-top: 30px;
+
+  @include phones{
+    margin-top: 20px;
+  }
 }
 
 .text-content_align{
@@ -199,6 +305,10 @@
   display: flex;
   margin-top: 30px;
   align-items: center;
+
+  @include phones{
+    margin-top: 13px;
+  }
 }
 
 .review-user__avatar{
@@ -222,25 +332,44 @@
   font-weight:bold;
 }
 
-.feedback__bottom{
+.feedback____blur-wrap{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 70px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
 
+.feedback-blur{
+  background-image: url('../img/works/feedback.jpg');
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: -738px -698px;
+  filter:blur(20px);
+}
 
+.feedback-form-wrap{
+  z-index: 2;
 }
 
 .feedback-form{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(#fff,.2);
-  border-radius: 5px;
 }
 
 .feedback-form__title{
   margin:35px 20px 0;
+
+  @include phones{
+    .subtitle{
+      margin-top: 0;
+    }
+  }
 }
 
 .feedback-form__input{

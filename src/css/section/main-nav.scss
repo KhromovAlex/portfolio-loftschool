@@ -5,11 +5,19 @@
 
 .main-nav__item + .main-nav__item{
   margin-left: 30px;
+
+  @include tablets{
+    margin-left: 40px;
+  }
+
+  @include phones{
+    margin-left: 10px;
+  }
 }
 
 .main-nav__link{
   display: block;
-  padding: 5px;
+  padding: 5px 0;
   transition:color 0.3s;
   &:hover{
     .text-link{
@@ -44,6 +52,9 @@
   }
   .main-nav__item + .main-nav__item {
     margin-top: 90px;
+    @include phones{
+      margin-top: 50px;
+    }
   }
 
   .main-nav__link{
@@ -77,5 +88,13 @@
     display: inline-block;
     line-height: 63px;
     transition: all .5s;
+
+    @include tablets{
+      font-size: 49px;
+    }
+
+    @include phones{
+      font-size: 35px;
+    }
   }
 }
