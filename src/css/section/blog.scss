@@ -46,22 +46,17 @@
     transform: translateY(2px);
     transition: height .5s;
   }
+
   @include desktop {
     padding:70px 45px;
+  }
+
+  @include tablets {
     &:before{
       height: 100px;
     }
   }
-  @include tablets {
-    &:before{
-      height: 70px;
-    }
-  }
-  @include phones {
-    &:before{
-      height: 30px;
-    }
-  }
+
 }
 
 

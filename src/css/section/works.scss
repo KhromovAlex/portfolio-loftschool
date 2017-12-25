@@ -17,15 +17,10 @@
     transition: height .5s;
     transform: translateY(2px);
 
-    @include desktop{
+    @include tablets{
       height: 100px;
     }
-    @include tablets{
-      height: 70px;
-    }
-    @include phones{
-      height: 30px;
-    }
+
   }
 
 }
