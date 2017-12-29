@@ -13,8 +13,6 @@
     background-repeat:no-repeat;
     background-position: center center;
     background-size: contain;
-
-
   }
 
 }
@@ -59,15 +57,13 @@
 
 }
 
-
-
-
 .nav-blog{
   width: 22%;
-  margin-right: 90px;
-  @include laptop{
+  position: absolute;
+  top: 70px;
+
+  @include tablets{
     width: 284px;
-    min-width: 284px;
     height: 100%;
     position: fixed;
     top: 0;
@@ -81,29 +77,79 @@
   }
 }
 
+.nav-blog_active{
+  left: 0;
+  box-shadow: 5px 1px 10px black;
+}
+
+.nav-blog_fixed{
+  position: fixed;
+  top: 0;
+}
+
+.nav-blog__button{
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: $green;
+  border-radius: 50%;
+  position: absolute;
+  transform:translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: -9999px;
+  cursor: pointer;
+}
+
+.nav-blog__button_active{
+  left: 100%;
+}
+
 .nav-blog__link{
   display: block;
   text-align: right;
   padding: 15px 25px;
   padding-left: 0;
   color:$gray;
-  transition: color .5s;
+  transition: all .5s;
   border-right: 3px transparent solid;
+
   &:hover{
     color: $green;
+  }
+
+  @include tablets{
+    color: #fff;
+    opacity: .7;
+
+    &:hover{
+      opacity:1;
+      color: #fff;
+    }
   }
 }
 
 .nav-blog__link_active{
   border-right-color: $green;
   color: $green;
+  
+  @include tablets{
+    @include roboto(bold);
+    color: #fff;
+    border-right-color: transparent;
+    opacity:1;
+  }
 }
 
 .blog-content{
   width: 55%;
+  margin-left: 30%;
 
   @include desktop{
     width: 78%;
+  }
+  @include tablets{
+    margin-left: 0;
+    width: 100%;
   }
 }
 
@@ -156,5 +202,3 @@
     margin-left: 0;
   }
 }
-
-

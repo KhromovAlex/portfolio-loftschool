@@ -76,7 +76,7 @@ a{
   }
 
   @include phones{
-    //font-size: 35px;
+
     margin-bottom: 30px;
 
   }
@@ -113,7 +113,7 @@ a{
   }
 
   @include phones{
-    //font-size: 21px;
+
     &:before,&:after{
       top: 10px;
     }
