@@ -5,6 +5,7 @@ const parallax = require('./common/parallax');
 const parallaxScroll = require('./common/parallaxScroll');
 const navBlog = require('./common/nav-blog');
 const navScrollActivation = require('./common/navScrollActivation');
+const preload = require('./common/preload');
 
 
 // slider(); // инициализируем слайдер
@@ -15,3 +16,4 @@ parallax();
 parallaxScroll();
 navBlog();
 navScrollActivation();
+preload();
