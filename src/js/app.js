@@ -8,8 +8,7 @@ const navScrollActivation = require('./common/navScrollActivation');
 const preload = require('./common/preload');
 
 
-// slider(); // инициализируем слайдер
-
+slider();
 flip();
 fullmenu();
 parallax();

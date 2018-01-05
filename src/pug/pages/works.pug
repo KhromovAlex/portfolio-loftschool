@@ -23,18 +23,36 @@ block content
                         span.text-link Посмотреть сайт
             .slider__right-top
                 .slider-screen
-                    img.slider-screen__img(src="img/works/slide.png")
+                    ul.carousel-main
+                        li.carousel-main__slide.active
+                            img.slider-screen__img(src="img/works/slide1.png")
+                        li.carousel-main__slide
+                            img.slider-screen__img(src="img/works/slide2.png")
+                        li.carousel-main__slide
+                            img.slider-screen__img(src="img/works/slide3.png")
+                        li.carousel-main__slide
+                            img.slider-screen__img(src="img/works/slide4.png")
             .slider__btns
                 button.previous-slide.slider__link#previous
-                    .slider__wrap-img
-                        img.slider__img(src="img/works/slide-1.jpg")
-                    svg.slider__svg
-                        use(xlink:href="img/sprite.svg#icon-arrow_down")
+                    ul.carousel-slides
+                        li.carousel-slides__slide.carousel-slides__slide-previous
+                            img.slider__img(src="img/works/slide1.png")
+                        li.carousel-slides__slide.carousel-slides__slide-previous
+                            img.slider__img(src="img/works/slide2.png")
+                        li.carousel-slides__slide.carousel-slides__slide-previous
+                            img.slider__img(src="img/works/slide3.png")
+                        li.carousel-slides__slide.carousel-slides__slide-previous.active
+                            img.slider__img(src="img/works/slide4.png")
                 button.next-slide.slider__link#next
-                    .slider__wrap-img
-                        img.slider__img(src="img/works/slide-2.jpg")
-                    svg.slider__svg
-                        use(xlink:href="img/sprite.svg#icon-portf_arrow_up")
+                    ul.carousel-slides
+                        li.carousel-slides__slide.carousel-slides__slide-next
+                            img.slider__img(src="img/works/slide1.png")
+                        li.carousel-slides__slide.carousel-slides__slide-next.active
+                            img.slider__img(src="img/works/slide2.png")
+                        li.carousel-slides__slide.carousel-slides__slide-next
+                            img.slider__img(src="img/works/slide3.png")
+                        li.carousel-slides__slide.carousel-slides__slide-next
+                            img.slider__img(src="img/works/slide4.png")
     section.feedback
         .feedback__background
             img.feedback__background-img(src="img/works/feedback.jpg")

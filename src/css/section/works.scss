@@ -90,6 +90,7 @@
   background-color:$green;
   border-radius: 5px;
   transition: all .5s;
+
   &:hover{
     background-color: $dark-green;
   }
@@ -121,6 +122,21 @@
   height: 400px;
 }
 
+.carousel-main{
+  position: relative;
+}
+
+.carousel-main__slide{
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: all 1s;
+  &.active{
+    z-index: 10;
+    opacity: 1;
+  }
+}
+
 .slider-screen__img{
   max-width: 100%;
   max-height:100%;
@@ -130,6 +146,7 @@
   height: 30%;
   width: 50%;
   display: flex;
+  background-color: #efebe0;
 
   @include laptop{
     height: 200px;
@@ -137,31 +154,96 @@
   }
 }
 
+.carousel-slides__slide{
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slides__slide-previous{
+  top: 100%;
+  transition: all .75s;
+  &.active{
+    top: 0;
+  }
+}
+
+.carousel-slides__slide-next{
+  bottom: 100%;
+  transition: all .75s;
+  &.active{
+    bottom: 0;
+  }
+}
+
 .slider__link{
   width: 50%;
   cursor: pointer;
   display: flex;
-  justify-content: center;
-  align-items: center;
   border:none;
   background-color: transparent;
   padding: 0;
-  &:hover{
+  position: relative;
+  overflow: hidden;
 
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#b6b4ae,.7);
+    z-index: 40;
   }
 }
 
-.slider__wrap-img{
-  display: flex;
-  height: 100%;
-  width: 100%;
-
-  @include desktop{
-    height: 225px;
+.previous-slide{
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 30px;
+    height: 20px;
+    background:url("../img/bg-svg/portf_arrow_down.svg") no-repeat;
+    background-size: cover;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    z-index: 50;
   }
+  &:hover{
+    &:after{
+      top: 60%;
+      transition: top .3s;
+    }
+  }
+}
 
-  @include tablets{
-    height: 215px;
+.next-slide{
+  &:after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 20px;
+    background:url("../img/bg-svg/portf_arrow_up.svg") no-repeat;
+    background-size: cover;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    top: 50%;
+    z-index: 50;
+  }
+  &:hover{
+    &:after{
+      top: 40%;
+      transition: top .3s;
+    }
   }
 }
 
@@ -169,14 +251,6 @@
   max-width: 100%;
   max-height: 100%;
   flex: auto;
-}
-
-.slider__svg{
-  width: 28px;
-  height: 20px;
-  fill: #fff;
-  z-index: 50;
-  position: absolute;
 }
 
 // отзывы
