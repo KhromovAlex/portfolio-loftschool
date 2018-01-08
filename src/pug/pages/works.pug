@@ -13,14 +13,43 @@ block content
                 h2.title#first-section мои работы
         .works__slider
             .slider__info
-                .slider__title
-                    h3.subtitle Сайт 1
-                .slider__skills
-                    .slider__skills-text HTML, CSS, JAVASCRIPT
-                .slider__link-wrap
-                    a.slider__button(href="#")
-                        .slider__button-svg
-                        span.text-link Посмотреть сайт
+                ul.slider-info__list
+                    li.slider-info__item.active
+                        .slider__title
+                            h3.subtitle Сайт 1
+                        .slider__skills
+                            .slider__skills-text HTML, CSS, JAVASCRIPT
+                        .slider__link-wrap
+                            a.slider__button(href="#")
+                                .slider__button-svg
+                                span.text-link Посмотреть сайт
+                    li.slider-info__item
+                        .slider__title
+                            h3.subtitle Сайт 2
+                        .slider__skills
+                            .slider__skills-text PUG, SASS
+                        .slider__link-wrap
+                            a.slider__button(href="#")
+                                .slider__button-svg
+                                span.text-link Посмотреть сайт
+                    li.slider-info__item
+                        .slider__title
+                            h3.subtitle Сайт 3
+                        .slider__skills
+                            .slider__skills-text JADE, SCSS, NODE JS
+                        .slider__link-wrap
+                            a.slider__button(href="#")
+                                .slider__button-svg
+                                span.text-link Посмотреть сайт
+                    li.slider-info__item
+                        .slider__title
+                            h3.subtitle Сайт 4
+                        .slider__skills
+                            .slider__skills-text PHP, POST CSS
+                        .slider__link-wrap
+                            a.slider__button(href="#")
+                                .slider__button-svg
+                                span.text-link Посмотреть сайт
             .slider__right-top
                 .slider-screen
                     ul.carousel-main
@@ -35,21 +64,21 @@ block content
             .slider__btns
                 button.previous-slide.slider__link#previous
                     ul.carousel-slides
-                        li.carousel-slides__slide.carousel-slides__slide-previous
+                        li.carousel-slides__slide.carousel-slides__slide-previous.old-active
                             img.slider__img(src="img/works/slide1.png")
                         li.carousel-slides__slide.carousel-slides__slide-previous
                             img.slider__img(src="img/works/slide2.png")
-                        li.carousel-slides__slide.carousel-slides__slide-previous
+                        li.carousel-slides__slide.carousel-slides__slide-previous.next-active
                             img.slider__img(src="img/works/slide3.png")
                         li.carousel-slides__slide.carousel-slides__slide-previous.active
                             img.slider__img(src="img/works/slide4.png")
                 button.next-slide.slider__link#next
                     ul.carousel-slides
-                        li.carousel-slides__slide.carousel-slides__slide-next
+                        li.carousel-slides__slide.carousel-slides__slide-next.old-active
                             img.slider__img(src="img/works/slide1.png")
                         li.carousel-slides__slide.carousel-slides__slide-next.active
                             img.slider__img(src="img/works/slide2.png")
-                        li.carousel-slides__slide.carousel-slides__slide-next
+                        li.carousel-slides__slide.carousel-slides__slide-next.next-active
                             img.slider__img(src="img/works/slide3.png")
                         li.carousel-slides__slide.carousel-slides__slide-next
                             img.slider__img(src="img/works/slide4.png")
