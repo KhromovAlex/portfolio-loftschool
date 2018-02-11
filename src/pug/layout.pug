@@ -9,11 +9,10 @@ html(lang="ru-RU")
         meta(name="description" content="Описание сайта")
         title #{title}
         link(rel="stylesheet" href="css/main.min.css")
-
+        script(src="js/main.js" defer)
     body
         include section/fullmenu
         .wrapper
             block header
             block content
         include section/footer
-        script(src="js/main.js")
