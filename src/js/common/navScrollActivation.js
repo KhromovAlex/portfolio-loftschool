@@ -2,26 +2,32 @@
 
     const articlesBlog = document.querySelectorAll('.article-blog');
 
+    function getCoords(elem) { // кроме IE8-
+        var box = elem.getBoundingClientRect();
+      
+        return {
+          top: box.top + pageYOffset,
+          left: box.left + pageXOffset
+        };
+      
+      }
+
     function navScrollToAnchor() {
-        for(let i = 0; articlesBlog.length;i++){
-            let elem = articlesBlog[i];
-            let scroll = window.pageYOffset;
-            let rectArticlesBlog = elem.getBoundingClientRect();
-            let topArticlesBlog = rectArticlesBlog.top + scroll - 100;
-            let bottomArticlesBlog = rectArticlesBlog.bottom + scroll;
+        articlesBlog.forEach(elem => {
+            let scroll = pageYOffset;
+            let topArticlesBlog = getCoords(elem).top - 100;
+            let bottomArticlesBlog = getCoords(elem).top + elem.offsetHeight;
             let id = elem.getAttribute('id');
-
-            if( scroll > topArticlesBlog && scroll < bottomArticlesBlog){
+            if (scroll > topArticlesBlog && scroll < bottomArticlesBlog) {
                 document.querySelector('.nav-blog__link.nav-blog__link_active').classList.remove('nav-blog__link_active');
-                document.querySelector('.nav-blog__link[href="#'+id+'"]').classList.add('nav-blog__link_active');
+                document.querySelector('.nav-blog__link[href="#' + id + '"]').classList.add('nav-blog__link_active');
             }
-
-        }
+        });
     }
 
     function navScrollToAnchorListener() {
-        if(articlesBlog){
-            window.addEventListener('scroll',navScrollToAnchor);
+        if (articlesBlog) {
+            document.addEventListener('scroll', navScrollToAnchor);
         }
     }
 

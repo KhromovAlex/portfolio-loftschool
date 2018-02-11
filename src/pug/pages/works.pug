@@ -117,11 +117,12 @@ block content
             .feedback-form-wrap
                 form.feedback-form
                     .feedback-form__title
-                        h3.subtitle связаться со мной
+                        h3.subtitle связаться со мной                    
                     .feedback-form__input
-                        input(type="text" placeholder="Имя").feedback-form__name
-                        input(type="text" placeholder="Еmail").feedback-form__email
-                        textarea(placeholder="Ваше сообщение").feedback-form__text
+                        input(name="username" type="text" placeholder="Имя").feedback-form__name
+                        input(name="email" type="text" placeholder="Еmail").feedback-form__email
+                        textarea(name="text" placeholder="Ваше сообщение").feedback-form__text
+                        .status-mail
                     .feedback-form__buttons-wrap
                         input(type="submit" value="Отправить").feedback-form__button
                         input(type="reset" value="Очистить").feedback-form__button

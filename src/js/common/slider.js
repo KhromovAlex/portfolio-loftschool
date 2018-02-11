@@ -1,226 +1,153 @@
 (function () {
-    const
-        slider = {
-            previousLink: document.getElementById('previous'),
-            nextLink: document.getElementById('next'),
-            slidesMain: document.getElementsByClassName('carousel-main__slide'),
-            slidesMainActive: document.querySelector('.carousel-main__slide.active'),
-            slidesPrevious: document.getElementsByClassName('carousel-slides__slide-previous'),
-            slidesNext: document.getElementsByClassName('carousel-slides__slide-next'),
-            slideNextActive: document.querySelector('.carousel-slides__slide-next.active'),
-            slideNextNActive: document.querySelector('.carousel-slides__slide-next.next-active'),
-            slidePreviousActive: document.querySelector('.carousel-slides__slide-previous.active'),
-            slidePreviousNActive: document.querySelector('.carousel-slides__slide-previous.next-active'),
-            slidesInfo: document.getElementsByClassName('slider-info__item'),
-            slideInfoActive: document.querySelector('.slider-info__item.active'),
-            slidePreviousOldActive: document.querySelector('.carousel-slides__slide-previous.old-active'),
-            slideNextOldActive: document.querySelector('.carousel-slides__slide-next.old-active')
-        };
+  const buttonsBack = document.querySelector(".previous-slide .carousel-slides"),
+    buttonsNext = document.querySelector(".next-slide .carousel-slides"),
+    view = document.querySelector(".carousel-main"),
+    info = document.querySelector(".slider-info__list");
 
-    function nextLinkListener() {
-        slider.nextLink.addEventListener('click',function (e) {
+  if (info) {
+    info.firstElementChild.classList.add("active");
+  }
+  if (view) {
+    view.firstElementChild.classList.add("active");
+  }
+  if (buttonsNext) {
+    buttonsNext.firstElementChild.classList.add("old-active");
+    buttonsNext.firstElementChild.nextElementSibling.classList.add("active");
+    buttonsNext.firstElementChild.nextElementSibling.nextElementSibling.classList.add(
+      "next-active"
+    );
+  }
+  if (buttonsBack) {
+    buttonsBack.lastElementChild.classList.add("active");
+    buttonsBack.firstElementChild.classList.add("old-active");
+    buttonsBack.lastElementChild.previousElementSibling.classList.add(
+      "next-active"
+    );
+  }
 
-            if(slider.slideInfoActive.nextElementSibling){
-                slider.slideInfoActive.classList.remove('active');
-                slider.slideInfoActive.nextElementSibling.classList.add('active');
-                slider.slideInfoActive = document.querySelector('.slider-info__item.active');
-            }
-            else{
-                slider.slideInfoActive.classList.remove('active');
-                slider.slidesInfo[0].classList.add('active');
-                slider.slideInfoActive = document.querySelector('.slider-info__item.active');
-            }
+  let slider = {
+    previousLink: document.getElementById("previous"),
+    nextLink: document.getElementById("next")
+  };
 
-            if(slider.slideNextActive.nextElementSibling){
-                slider.slideNextActive.nextElementSibling.classList.add('active');
-                slider.slideNextActive.classList.remove('active');
-                slider.slideNextActive = document.querySelector('.carousel-slides__slide-next.active');
-            }
-            else{
-                slider.slidesNext[0].classList.add('active');
-                slider.slideNextActive.classList.remove('active');
-                slider.slideNextActive = document.querySelector('.carousel-slides__slide-next.active');
-            }
+  function nextLinkListener() {
+    slider.nextLink.addEventListener("click", e => {
 
-            if(slider.slidesMainActive.nextElementSibling){
-                slider.slidesMainActive.classList.remove('active');
-                slider.slidesMainActive.nextElementSibling.classList.add('active');
-                slider.slidesMainActive = document.querySelector('.carousel-main__slide.active');
-            }
-            else{
-                slider.slidesMainActive.classList.remove('active');
-                slider.slidesMain[0].classList.add('active');
-                slider.slidesMainActive = document.querySelector('.carousel-main__slide.active');
-            }
+      let slideTo = function (activeElem, elem, classForActiveElem, activeClass) {
+        if (activeElem.nextElementSibling) {
+          activeElem.nextElementSibling.classList.add(activeClass);
+          activeElem.classList.remove(activeClass);
+          activeElem = document.querySelector(classForActiveElem);
+        } else {
+          elem.classList.add(activeClass);
+          activeElem.classList.remove(activeClass);
+          activeElem = document.querySelector(classForActiveElem);
+        }
+      }
 
-            if(slider.slidePreviousActive.nextElementSibling) {
-                slider.slidePreviousActive.classList.remove('active');
-                slider.slidePreviousActive.nextElementSibling.classList.add('active');
-                slider.slidePreviousActive = document.querySelector('.carousel-slides__slide-previous.active');
-            }
-            else{
-                slider.slidePreviousActive.classList.remove('active');
-                slider.slidesPrevious[0].classList.add('active');
-                slider.slidePreviousActive = document.querySelector('.carousel-slides__slide-previous.active');
-            }
+      let slideInfoActive = document.querySelector(".slider-info__item.active"),
+        slidesInfoFirst = document.querySelector(".slider-info__item"),
+        slideNextActive = document.querySelector(
+          ".carousel-slides__slide-next.active"
+        ),
+        slidesNextFirst = document.querySelector(
+          ".carousel-slides__slide-next"
+        ),
+        slidesMainActive = document.querySelector(".carousel-main__slide.active"),
+        slidesMainFirst = document.querySelector(".carousel-main__slide"),
+        slidePreviousActive = document.querySelector(
+          ".carousel-slides__slide-previous.active"
+        ),
+        slidesPreviousFirst = document.querySelector(
+          ".carousel-slides__slide-previous"
+        ),
+        slideNextNActive = document.querySelector(
+          ".carousel-slides__slide-next.next-active"
+        ),
+        slideNextOldActive = document.querySelector(
+          ".carousel-slides__slide-next.old-active"
+        ),
+        slidePreviousOldActive = document.querySelector(
+          ".carousel-slides__slide-previous.old-active"
+        ),
+        slidePreviousNActive = document.querySelector(
+          ".carousel-slides__slide-previous.next-active"
+        );
 
-            if(slider.slideNextNActive.nextElementSibling){
-                slider.slideNextNActive.classList.remove('next-active');
-                slider.slideNextNActive.nextElementSibling.classList.add('next-active');
-                slider.slideNextNActive = document.querySelector('.carousel-slides__slide-next.next-active');
-            }
-            else{
-                slider.slidesNext[0].classList.add('next-active');
-                slider.slideNextNActive.classList.remove('next-active');
-                slider.slideNextNActive = document.querySelector('.carousel-slides__slide-next.next-active');
-            }
+      slideTo(slideInfoActive, slidesInfoFirst, ".slider-info__item.active", "active");
+      slideTo(slideNextActive, slidesNextFirst, ".carousel-slides__slide-next.active", "active");
+      slideTo(slidesMainActive, slidesMainFirst, ".carousel-main__slide.active", "active");
+      slideTo(slidePreviousActive, slidesPreviousFirst, ".carousel-slides__slide-previous.active", "active");
+      slideTo(slideNextNActive, slidesNextFirst, ".carousel-slides__slide-next.next-active", "next-active");
+      slideTo(slideNextOldActive, slidesNextFirst, ".carousel-slides__slide-next.old-active", "old-active");
+      slideTo(slidePreviousOldActive, slidesPreviousFirst, ".carousel-slides__slide-previous.old-active", "old-active");
+      slideTo(slidePreviousNActive, slidesPreviousFirst, ".carousel-slides__slide-previous.next-active", "next-active");
+    });
+  }
 
-            if(slider.slideNextOldActive.nextElementSibling){
-                slider.slideNextOldActive.classList.remove('old-active');
-                slider.slideNextOldActive.nextElementSibling.classList.add('old-active');
-                slider.slideNextOldActive = document.querySelector('.carousel-slides__slide-next.old-active');
-            }
-            else{
-                slider.slidesNext[0].classList.add('old-active');
-                slider.slideNextOldActive.classList.remove('old-active');
-                slider.slideNextOldActive = document.querySelector('.carousel-slides__slide-next.old-active');
-            }
+  function previousLinkListener() {
+    slider.previousLink.addEventListener("click", e => {
 
-            if(slider.slidePreviousOldActive.nextElementSibling){
-                slider.slidePreviousOldActive.classList.remove('old-active');
-                slider.slidePreviousOldActive.nextElementSibling.classList.add('old-active');
-                slider.slidePreviousOldActive = document.querySelector('.carousel-slides__slide-previous.old-active');
-            }
-            else{
-                slider.slidePreviousOldActive.classList.remove('old-active');
-                slider.slidesPrevious[0].classList.add('old-active');
-                slider.slidePreviousOldActive = document.querySelector('.carousel-slides__slide-previous.old-active');
-            }
+      let slideTo = function (activeElem, elem, classForActiveElem, activeClass) {
+        if (activeElem.previousElementSibling) {
+          activeElem.previousElementSibling.classList.add(activeClass);
+          activeElem.classList.remove(activeClass);
+          activeElem = document.querySelector(classForActiveElem);
+        } else {
+          elem.classList.add(activeClass);
+          activeElem.classList.remove(activeClass);
+          activeElem = document.querySelector(classForActiveElem);
+        }
+      }
 
-            if(slider.slidePreviousNActive.nextElementSibling){
-                slider.slidePreviousNActive.classList.remove('next-active');
-                slider.slidePreviousNActive.nextElementSibling.classList.add('next-active');
-                slider.slidePreviousNActive = document.querySelector('.carousel-slides__slide-previous.next-active');
-            }
-            else{
-                slider.slidePreviousNActive.classList.remove('next-active');
-                slider.slidesPrevious[0].classList.add('next-active');
-                slider.slidePreviousNActive = document.querySelector('.carousel-slides__slide-previous.next-active');
-            }
+      let slideInfoActive = document.querySelector(".slider-info__item.active"),
+        slideNextActive = document.querySelector(
+          ".carousel-slides__slide-next.active"
+        ),
+        slidesMainActive = document.querySelector(".carousel-main__slide.active"),
+        slidePreviousActive = document.querySelector(
+          ".carousel-slides__slide-previous.active"
+        ),
+        slideNextNActive = document.querySelector(
+          ".carousel-slides__slide-next.next-active"
+        ),
+        slideNextOldActive = document.querySelector(
+          ".carousel-slides__slide-next.old-active"
+        ),
+        slidePreviousOldActive = document.querySelector(
+          ".carousel-slides__slide-previous.old-active"
+        ),
+        slidePreviousNActive = document.querySelector(
+          ".carousel-slides__slide-previous.next-active"
+        ),
+        slidesMain = document.querySelectorAll(".carousel-main__slide"),
+        slidesPrevious =
+          document.querySelectorAll(".carousel-slides__slide-previous"),
+        slideInfo = document.querySelectorAll(".slider-info__item"),
+        slidesNext = document.querySelectorAll(".carousel-slides__slide-next"),
+        slidesMainLast = slidesMain[slidesMain.length - 1],
+        slidesPreviousLast =
+          slidesPrevious[slidesPrevious.length - 1],
+        slideInfoLast = slideInfo[slideInfo.length - 1],
+        slidesNextLast = slidesNext[slidesNext.length - 1];
 
-        })
+      slideTo(slideInfoActive, slideInfoLast, ".slider-info__item.active", "active");
+      slideTo(slidePreviousActive, slidesPreviousLast, ".carousel-slides__slide-previous.active", "active");
+      slideTo(slidesMainActive, slidesMainLast, ".carousel-main__slide.active", "active");
+      slideTo(slideNextActive, slidesNextLast, ".carousel-slides__slide-next.active", "active");
+      slideTo(slidePreviousNActive, slidesPreviousLast, ".carousel-slides__slide-previous.next-active", "next-active");
+      slideTo(slidePreviousOldActive, slidesPreviousLast, ".carousel-slides__slide-previous.old-active", "old-active");
+      slideTo(slideNextOldActive, slidesNextLast, ".carousel-slides__slide-next.old-active", "old-active");
+      slideTo(slideNextNActive, slidesNextLast, ".carousel-slides__slide-next.next-active", "next-active");
+    });
+  }
+
+  function sliderInit() {
+    if (slider.nextLink && slider.previousLink) {
+      nextLinkListener();
+      previousLinkListener();
     }
+  }
 
-    function previousLinkListener() {
-        slider.previousLink.addEventListener('click',function (e) {
-
-            var
-                slidesMainLast = slider.slidesMain[slider.slidesMain.length - 1],
-                slidesPreviousLast = slider.slidesPrevious[slider.slidesPrevious.length - 1],
-                slideInfoLast = slider.slidesInfo[slider.slidesInfo.length - 1],
-                slidesNextLast = slider.slidesNext[slider.slidesNext.length - 1];
-
-            if(slider.slideInfoActive.previousElementSibling){
-                slider.slideInfoActive.classList.remove('active');
-                slider.slideInfoActive.previousElementSibling.classList.add('active');
-                slider.slideInfoActive = document.querySelector('.slider-info__item.active');
-            }
-            else{
-                slider.slideInfoActive.classList.remove('active');
-                slideInfoLast.classList.add('active');
-                slider.slideInfoActive = document.querySelector('.slider-info__item.active');
-            }
-
-            if(slider.slidePreviousActive.previousElementSibling) {
-                slider.slidePreviousActive.classList.remove('active');
-                slider.slidePreviousActive.previousElementSibling.classList.add('active');
-                slider.slidePreviousActive = document.querySelector('.carousel-slides__slide-previous.active');
-            }
-            else{
-                slider.slidePreviousActive.classList.remove('active');
-                slidesPreviousLast.classList.add('active');
-                slider.slidePreviousActive = document.querySelector('.carousel-slides__slide-previous.active');
-            }
-
-            if(slider.slidesMainActive.previousElementSibling){
-                slider.slidesMainActive.classList.remove('active');
-                slider.slidesMainActive.previousElementSibling.classList.add('active');
-                slider.slidesMainActive = document.querySelector('.carousel-main__slide.active');
-            }
-            else{
-                slider.slidesMainActive.classList.remove('active');
-                slidesMainLast.classList.add('active');
-                slider.slidesMainActive = document.querySelector('.carousel-main__slide.active');
-            }
-
-            if(slider.slideNextActive.previousElementSibling){
-                slider.slideNextActive.classList.remove('active');
-                slider.slideNextActive.previousElementSibling.classList.add('active');
-                slider.slideNextActive = document.querySelector('.carousel-slides__slide-next.active');
-            }
-            else{
-                slider.slideNextActive.classList.remove('active');
-                slidesNextLast.classList.add('active');
-                slider.slideNextActive = document.querySelector('.carousel-slides__slide-next.active');
-            }
-
-            if(slider.slidePreviousNActive.previousElementSibling){
-                slider.slidePreviousNActive.classList.remove('next-active');
-                slider.slidePreviousNActive.previousElementSibling.classList.add('next-active');
-                slider.slidePreviousNActive = document.querySelector('.carousel-slides__slide-previous.next-active');
-            }
-            else{
-                slider.slidePreviousNActive.classList.remove('next-active');
-                slidesPreviousLast.classList.add('next-active');
-                slider.slidePreviousNActive = document.querySelector('.carousel-slides__slide-previous.next-active');
-            }
-
-            if(slider.slidePreviousOldActive.previousElementSibling){
-                slider.slidePreviousOldActive.classList.remove('old-active');
-                slider.slidePreviousOldActive.previousElementSibling.classList.add('old-active');
-                slider.slidePreviousOldActive = document.querySelector('.carousel-slides__slide-previous.old-active');
-            }
-            else{
-                slider.slidePreviousOldActive.classList.remove('old-active');
-                slidesPreviousLast.classList.add('old-active');
-                slider.slidePreviousOldActive = document.querySelector('.carousel-slides__slide-previous.old-active');
-            }
-
-            if(slider.slideNextOldActive.previousElementSibling){
-                slider.slideNextOldActive.previousElementSibling.classList.add('old-active');
-                slider.slideNextOldActive.classList.remove('old-active');
-                slider.slideNextOldActive = document.querySelector('.carousel-slides__slide-next.old-active');
-            }
-            else{
-                slider.slideNextOldActive.classList.remove('old-active');
-                slidesNextLast.classList.add('old-active');
-                slider.slideNextOldActive = document.querySelector('.carousel-slides__slide-next.old-active');
-            }
-
-            if(slider.slideNextNActive.previousElementSibling){
-                slider.slideNextNActive.classList.remove('next-active');
-                slider.slideNextNActive.previousElementSibling.classList.add('next-active');
-                slider.slideNextNActive = document.querySelector('.carousel-slides__slide-next.next-active');
-            }
-            else{
-                slider.slideNextNActive.classList.remove('next-active');
-                slidesNextLast.classList.add('next-active');
-                slider.slideNextNActive = document.querySelector('.carousel-slides__slide-next.next-active');
-            }
-
-        })
-    }
-
-
-
-function sliderInit(){
-    if (slider.nextLink && slider.previousLink){
-        nextLinkListener();
-        previousLinkListener();
-    }
-}
-
-
-module.exports = sliderInit;
-
-}());
+  module.exports = sliderInit;
+})();

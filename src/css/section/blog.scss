@@ -40,7 +40,8 @@
     bottom: 100%;
     left: 0;
     height: 150px;
-    background-image: url('../img/bg-svg/triangle-blog.svg');
+    background: url('../img/bg-svg/triangle-blog.svg') no-repeat;
+    background-size: 100% 100%;
     transform: translateY(2px);
     transition: height .5s;
   }

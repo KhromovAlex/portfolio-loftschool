@@ -28,6 +28,10 @@ a{
   }
 }
 
+button{
+  outline: 0;
+}
+
 .text-link{
   color: #fff;
   @include roboto(medium);

@@ -34,36 +34,36 @@ block content
                             .skills__row-title
                                 h3.slills-title Frontend
                         ul.skills__row-list
-                           each skill in ['Html5', 'css3', 'JavaScript']
+                           each skill, index in ['Html5', 'css3', 'JavaScript']
                                 li.skills-row__item
                                     .skill__circle
                                         svg.circles(viewBox="0 0 110 110")
                                             circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                            circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                            circle(class=`circle__second circle-${(index + 2) * 21}` r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
                                         span.skill__title #{skill}
                     li.skills__item
                         .skills__row
                             .skills__row-title
                                 h3.slills-title Backend
                         ul.skills__row-list
-                            each skill in ['PHP', 'mySQL', 'Node.js & npm', 'Mongo.db']
+                            each skill, index in ['PHP', 'mySQL', 'Node.js & npm', 'Mongo.db']
                                 li.skills-row__item
                                     .skill__circle
                                         svg.circles(viewBox="0 0 110 110")
                                             circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                            circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                            circle(class=`circle__second circle-${(index + 2) * 10}` r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
                                         span.skill__title #{skill}
                     li.skills__item
                         .skills__row
                             .skills__row-title
                                 h3.slills-title Workflow
                         ul.skills__row-list
-                            each skill in ['Git', 'Gulp', 'Bower']
+                            each skill, index in ['Git', 'Gulp', 'Bower']
                                 li.skills-row__item
                                     .skill__circle
                                         svg.circles(viewBox="0 0 110 110")
                                             circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                            circle.circle__second.circle-100(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                            circle(class=`circle__second circle-${(index + 2) * 5}` r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
                                         span.skill__title #{skill}
     section.map
         .map__google

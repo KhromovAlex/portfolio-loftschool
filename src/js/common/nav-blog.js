@@ -1,72 +1,74 @@
 (function () {
+  const button = document.getElementById("nav-blog__button");
+  const navBlock = document.querySelector(".nav-blog");
+  const blog = document.querySelector(".article-wrap");
 
-    const button = document.getElementById('nav-blog__button');
-    const navBlock = document.querySelector('.nav-blog');
-    const blog = document.querySelector('.blog-content');
-    if (navBlock) {var topNavBlock = navBlock.getBoundingClientRect().top + window.pageYOffset;}
+  function getCoords(elem) { // кроме IE8-
+    var box = elem.getBoundingClientRect();
 
+    return {
+      top: box.top + pageYOffset,
+      left: box.left + pageXOffset
+    };
 
-    function addEventButton() {
-        let top = blog.getBoundingClientRect().top;
-            if (top <= 200 && window.innerWidth < 769) {
-                button.classList.add('nav-blog__button_active');
-            } else {
-                button.classList.remove('nav-blog__button_active');
-            }
+  }  
+
+  function addEventButton() {
+    let top = getCoords(blog).top,
+      scroll = pageYOffset;
+    if (top <= (scroll + 200) && window.innerWidth < 769) {
+      button.classList.add("nav-blog__button_active");
+    } else {
+      button.classList.remove("nav-blog__button_active");
     }
+  }
 
-    function showNavBlog() {
+  function showNavBlog() {
+    button.addEventListener("click", function (e) {
+      navBlock.classList.toggle("nav-blog_active");
+    });
 
-        button.addEventListener('click', function (e) {
-            navBlock.classList.toggle("nav-blog_active");
-        });
+    window.addEventListener("scroll", function (e) {
+      addEventButton();
 
-        window.addEventListener('scroll', function (e) {
+      let scrollW = pageYOffset;
+      let heightW = innerHeight / 2;
 
-            addEventButton();
+      if (heightW > scrollW) {
+        navBlock.classList.remove("nav-blog_active");
+      }
+    });
 
-            let scrollW = pageYOffset;
-            let heightW = innerHeight / 2;
+    window.addEventListener("resize", function (e) {
+      addEventButton();
+      if (window.innerWidth > 768) {
+        navBlock.classList.remove("nav-blog_active");
+      }
+    }, false);
+  }
 
-            if (heightW > scrollW) {
-                navBlock.classList.remove("nav-blog_active");
-            }
+  function setFixedNavBlock() {
+    var topNavBlock = getCoords(navBlock).top;
+    let Ascroll = () => {      
+      if (pageYOffset > topNavBlock) {
+        navBlock.classList.add("nav-blog_fixed");
+      } else {
+        navBlock.classList.remove("nav-blog_fixed");
+      }
+    };
 
-        });
-
-        window.addEventListener('resize', function (e) {
-            addEventButton();
-            if(window.innerWidth > 768) {
-                navBlock.classList.remove("nav-blog_active");
-            }
-        });
-
-    }
+    window.addEventListener('scroll', Ascroll, false);
     
-    function setFixedNavBlock() {
 
-        let scroll = pageYOffset;
+    
+  }
 
-
-        if (scroll > topNavBlock) {
-            navBlock.classList.add('nav-blog_fixed');
-        }
-
-        if (scroll < topNavBlock) {
-            navBlock.classList.remove('nav-blog_fixed');
-        }
-
+  function menuInit() {
+    if (navBlock && button && blog) {
+      showNavBlog();
+      setFixedNavBlock();      
     }
+  }
 
-    function menuInit() {
-
-        if(navBlock && button && blog){
-            showNavBlog();
-            window.addEventListener('scroll',setFixedNavBlock);
-        }
-    }
-
-
-    module.exports = menuInit;
-
-}());
+  module.exports = menuInit;
+})();

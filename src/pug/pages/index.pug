@@ -50,17 +50,18 @@ block content
                 section.welcome-content.back.welcome-auth
                     .welcome-auth__title
                         .subtitle Авторизируйтесь
-                    form.welcome-auth__form
+                    .status-login
+                    form#form-auth.welcome-auth__form(method="POST")
                         .welcome-auth__login-wrap
                             .welcome-auth__input-bg
                                 svg.welcome-auth__svg-input
                                     use(xlink:href="img/sprite.svg#icon-login")
-                            input.welcome-auth__input.welcome-auth__login(type="text" placeholder="Логин")
+                            input#auth-login.welcome-auth__input.welcome-auth__login(name="login" type="text" placeholder="Логин")
                         .welcome-auth__pass-wrap
                             .welcome-auth__input-bg
                                 svg.welcome-auth__svg-input
                                     use(xlink:href="img/sprite.svg#icon-password")
-                            input.welcome-auth__input.welcome-auth__pass(type="text" placeholder="Пароль")
+                            input#auth-password.welcome-auth__input.welcome-auth__pass(name="password" type="password" placeholder="Пароль")
                         .welcome-auth__checkbox-wrap
                             input.welcome-auth__checkbox(type="checkbox" id="checkbox-auth")
                             label.welcome-auth__checkbox-label(for="checkbox-auth") Я человек
@@ -83,9 +84,9 @@ block content
                                     button.welcome-nav__link.welcome-nav__link_auth#go-home-welcome(type="button")
                                         span.text-link На главную
                                 li.welcome-nav__item.welcome-nav__link_auth
-                                    button.welcome-nav__link.welcome-nav__link_auth(type="submit")
+                                    button.welcome-nav__link.welcome-nav__link_auth(type="submit" id="submit-auth")
                                         span.text-link Вход
         footer.footer-welcome
             .footer-welcome__copyright
                 .copyright-welcome.
-                        © Александр Хромов | создано с любовью в LoftSchool | 2017
+                        © Александр Хромов | 2018
