@@ -10,6 +10,7 @@ window.addEventListener("load", () => {
 const navScrollActivation = require("./common/navScrollActivation");
 const preload = require("./common/preload");
 const mail = require("./common/mail");
+const scrollTo = require("./common/scrollTo");
 
 slider();
 flip();
@@ -19,4 +20,4 @@ parallaxScroll();
 navScrollActivation();
 preload();
 mail();
-
+scrollTo();
